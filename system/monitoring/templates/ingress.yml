@@ -12,12 +12,12 @@ spec:
     - match: Host(`grafana.simonmalm.com`)
       kind: Rule
       services:
-        - name: grafana
+        - name: monitoring-grafana
           port: 80
           sticky:
             cookie:
               httpOnly: true
-              name: grafana
+              name: monitoring-grafana
               secure: true
               sameSite: none
   tls:
