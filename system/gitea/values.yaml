@@ -267,10 +267,7 @@ gitea:
   ## @param gitea.admin.password Password for the Gitea admin user
   ## @param gitea.admin.email Email for the Gitea admin user
   admin:
-    #existingSecret: gitea-admin-secret
-    username: gitea_admin
-    password: kPu%gmXCT##$D4Y&Bez
-    email: "gitea@local.domain"
+    existingSecret: gitea-admin-secret
 
   ## @param gitea.metrics.enabled Enable Gitea metrics
   ## @param gitea.metrics.serviceMonitor.enabled Enable Gitea metrics service monitor
@@ -317,7 +314,7 @@ gitea:
   ## @param gitea.config  Configuration for the Gitea server,ref: [config-cheat-sheet](https://docs.gitea.io/en-us/config-cheat-sheet/)
   config:
     server:
-      ROOT_URL: https://git.simonmalm.com
+      ROOT_URL: https://git.simonmalm.com/
   #  APP_NAME: "Gitea: Git with a cup of tea"
   #  RUN_MODE: dev
   #
