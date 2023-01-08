@@ -1,4 +1,4 @@
 loki-stack:
   loki:
     readinessProbe:
-      initialDelaySeconds: 300
+      initialDelaySeconds: 120
