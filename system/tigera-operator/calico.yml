@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: calico-stack
+  namespace: argo-cd
+spec:
+  project: system
+  source:
+    repoURL: "https://github.com/a19simma/argocd-cluster-bootstrap"
+    path: system/tigera-operator/Chart
+    targetRevision: HEAD
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: tigera-operator
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
