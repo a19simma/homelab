@@ -1,3 +1,4 @@
-loki:
-  readinessProbe:
-    initialDelaySeconds: 120
+loki-stack:
+  loki:
+    readinessProbe:
+      initialDelaySeconds: 300
