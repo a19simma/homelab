@@ -5,7 +5,7 @@ gitea:
     ## @param gitea.admin.password Password for the Gitea admin user
     ## @param gitea.admin.email Email for the Gitea admin user
     admin:
-      existingSecret: gitea-admin-secrett
+      existingSecret: gitea-admin-secret
 
     config:
       server:
