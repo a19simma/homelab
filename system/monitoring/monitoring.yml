@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: system
+  namespace: argo-cd
+spec:
+  project: system
+  source:
+    repoURL: "https://github.com/a19simma/argocd-cluster-bootstrap"
+    path: system/monitoring/Chart
+    targetRevision: HEAD
+  destination:
+    server: "https://kubernetes.default.svc"
+  syncPolicy:
+    automated: {}
+    syncOptions:
+      - CreateNamespace=true
+      - ServerSideApply=true
