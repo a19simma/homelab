@@ -69,7 +69,7 @@ kube-state-metrics:
           targetLabel: kubernetes_node
 
 nodeExporter:
-  enabled: true
+  enabled: false
   serviceMonitor:
     relabelings:
       - action: replace
