@@ -23,6 +23,6 @@ version: 0.1.0
 # It is recommended to use it with quotes.
 appVersion: "0.1.0"
 dependencies:
-  - name: projectcalico
+  - name: tigera-operator
     version: "3.24.5"
     repository: https://docs.projectcalico.org/charts/
