@@ -7,7 +7,7 @@ spec:
   project: system
   source:
     repoURL: "https://github.com/a19simma/argocd-cluster-bootstrap"
-    path: system/calico/Chart
+    path: system/tigera-operator/Chart
     targetRevision: HEAD
   destination:
     server: "https://kubernetes.default.svc"
