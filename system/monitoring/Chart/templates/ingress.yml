@@ -12,7 +12,7 @@ spec:
     - match: Host(`grafana.simonmalm.com`)
       kind: Rule
       services:
-        - name: monitoring-grafana
+        - name: monitoring-stack-grafana
           port: 80
           sticky:
             cookie:
@@ -22,25 +22,3 @@ spec:
               sameSite: none
   tls:
     secretName: simonmalm-com-tls
----
-apiVersion: traefik.containo.us/v1alpha1
-kind: IngressRoute
-metadata:
-  name: grafana-ingress-internal
-  namespace: monitoring
-  annotations:
-    kubernetes.io/ingress.class: traefik-external
-spec:
-  entryPoints:
-    - websecure
-  routes:
-    - match: Host(`grafana.local.simonmalm.com`)
-      kind: Rule
-      services:
-        - kind: Service
-          name: grafana
-          namespace: monitoring
-          port: 80
-
-  tls:
-    secretName: local-example-com
