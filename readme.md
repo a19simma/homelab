@@ -1,17 +1,7 @@
 # Cluster configuration using Argo-CD
 
-## Install CNI
+wget https://github.com/bitnami-labs/sealed-secrets/releases/download/v0.19.4/kubeseal-0.19.4-linux-amd64.tar.gz
+tar -xvzf kubeseal-0.19.4-linux-amd64.tar.gz kubeseal
+sudo install -m 755 kubeseal /usr/local/bin/kubeseal
 
-apply the calico helm chart with the provided values file in .\cni
-
-```
-kubectl create ns tigera-operator
-helm install calico  projectcalico/tigera-operator -n tigera-operator
-kubectl apply -f .\calico-ippoll.yml
-```
-
-Calico may have issues uninstalling some of its Service account and be stuck in the cluster
-
-```
-kubectl patch -n calico-system ServiceAccount/calico-node --type json --patch='[{"op":"remove","path":"/metadata/finalizers"}]'
-```
+e8332b3ca725da55e4b54e2e932fa031ada78
