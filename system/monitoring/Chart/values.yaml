@@ -2,3 +2,4 @@ loki-stack:
   loki:
     readinessProbe:
       initialDelaySeconds: 120
+    fullnameOverride: monitoring-stack-loki
