@@ -12,12 +12,12 @@ spec:
     - match: Host(`argo.simonmalm.com`)
       kind: Rule
       services:
-        - name: argocd
+        - name: argocd-server
           port: 3000
-    - match: Host(`argp.local.simonmalm.com`)
+    - match: Host(`argo.local.simonmalm.com`)
       kind: Rule
       services:
-        - name: argocd
+        - name: argocd-server
           port: 3000
 
   tls:
