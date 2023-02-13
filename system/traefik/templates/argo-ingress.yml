@@ -1,0 +1,24 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: argocd
+  namespace: argocd
+  annotations:
+    kubernetes.io/ingress.class: traefik-external
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`argo.simonmalm.com`)
+      kind: Rule
+      services:
+        - name: argocd
+          port: 3000
+    - match: Host(`argp.local.simonmalm.com`)
+      kind: Rule
+      services:
+        - name: argocd
+          port: 3000
+
+  tls:
+    secretName: simonmalm-com-tls
