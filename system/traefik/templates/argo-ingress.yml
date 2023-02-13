@@ -13,12 +13,12 @@ spec:
       kind: Rule
       services:
         - name: argocd-server
-          port: 3000
+          port: 80
     - match: Host(`argo.local.simonmalm.com`)
       kind: Rule
       services:
         - name: argocd-server
-          port: 3000
+          port: 80
 
   tls:
     secretName: simonmalm-com-tls
