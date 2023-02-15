@@ -8,5 +8,7 @@ kube-prometheus-stack:
   grafana:
     persistence:
       enabled: true
+    adminUser:
+    adminPassword: 
     admin:
       existingSecret: "grafana-admin-secret"
