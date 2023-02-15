@@ -3,3 +3,8 @@ loki-stack:
     readinessProbe:
       initialDelaySeconds: 120
     fullnameOverride: monitoring-stack-loki
+
+kube-prometheus-stack:
+  grafana:
+    persistence:
+      enabled: true
