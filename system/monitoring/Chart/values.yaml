@@ -13,7 +13,7 @@ kube-prometheus-stack:
     admin:
       existingSecret: "grafana-admin-secret"
   prometheusOperator:
-    admissionsWebhooks:
+    admissionWebhooks:
       failurePolicy: Ignore
       patch:
         enabled: false
