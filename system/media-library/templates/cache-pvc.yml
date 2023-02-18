@@ -3,9 +3,9 @@ kind: PersistentVolumeClaim
 metadata:
   name: cache-pvc
 spec:
-  storageClassName: ceph-block
+  storageClassName: ceph-filesystem
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
   resources:
     requests:
       storage: 1Gi
