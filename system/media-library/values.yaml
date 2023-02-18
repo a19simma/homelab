@@ -1,0 +1,14 @@
+nameOverride: ""
+fullnameOverride: ""
+
+jellyfin:
+  replicaCount: 1
+  image:
+    repository: jellyfin/jellyfin
+    tag: latest
+
+qbittorrent:
+  replicaCount: 1
+  image:
+    repository: lscr.io/linuxserver/qbittorrent
+    tag: latest

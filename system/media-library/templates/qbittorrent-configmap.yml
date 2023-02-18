@@ -1,0 +1,6 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: qbittorrent-config
+data:
+  qBittorrent.conf: "[AutoRun]\r\nenabled=false\r\nprogram=\r\n\r\n[BitTorrent]\r\nSession\\DefaultSavePath=/downloads/\r\nSession\\Port=6881\r\nSession\\QueueingSystemEnabled=true\r\nSession\\TempPath=/downloads/incomplete/\r\n\r\n[LegalNotice]\r\nAccepted=true\r\n\r\n[Meta]\r\nMigrationVersion=4\r\n\r\n[Network]\r\nCookies=@Invalid()\r\nPortForwardingEnabled=false\r\n\r\n[Preferences]\r\nConnection\\PortRangeMin=6881\r\nConnection\\UPnP=false\r\nDownloads\\SavePath=/downloads/\r\nDownloads\\TempPath=/downloads/incomplete/\r\nWebUI\\Address=*\r\nWebUI\\Port=8080\r\nWebUI\\ServerDomains=*\r\nWebUI\\HostHeaderValidation=false"

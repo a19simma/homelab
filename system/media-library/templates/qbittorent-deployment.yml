@@ -1,0 +1,65 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: qbittorrent
+spec:
+  replicas: {{ .Values.qbittorrent.replicaCount }}
+  selector:
+    matchLabels:
+      app: qbittorrent
+  template:
+    metadata:
+      labels:
+        app: qbittorrent
+    spec:
+      containers:
+        - name: qbittorrent-server
+          image: "{{ .Values.qbittorrent.image.repository }}:{{ .Values.qbittorrent.image.tag }}"
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: WEBUI_PORT
+              value: "8080"
+            - name: PUID
+              value: "1000"
+            - name: PGID
+              value: "1000"
+            - name: TZ
+              value: Etc/UTC
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
+            - name: torrent
+              containerPort: 6881 
+              protocol: TCP
+            - name: torrentudp
+              containerPort: 6881 
+              protocol: UDP
+          volumeMounts:
+            - name: config
+              mountPath: /config/qBittorrent/qBittorrent.conf
+              subPath: qBittorrent.conf
+            - name: media
+              mountPath: "/downloads"
+      volumes:
+        - name: config
+          configMap: 
+            name: qbittorrent-config
+            items:
+              - key: qBittorrent.conf
+                path: qBittorrent.conf
+        - name: media
+          persistentVolumeClaim:
+            claimName: media-pvc
+{{- with .Values.nodeSelector }}
+nodeSelector:
+{{- toYaml . | nindent 8 }}
+{{- end }}
+{{- with .Values.affinity }}
+affinity:
+{{- toYaml . | nindent 8 }}
+{{- end }}
+{{- with .Values.tolerations }}
+tolerations:
+{{- toYaml . | nindent 8 }}
+{{- end }}

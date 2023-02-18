@@ -1,0 +1,61 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "media-library.fullname" .}}
+spec:
+  replicas: {{ .Values.jellyfin.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "media-library.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "media-library.selectorLabels" . | nindent 8 }}
+    spec:
+      containers:
+        - name: jellyfin-server
+          image: "{{ .Values.jellyfin.image.repository }}:{{ .Values.jellyfin.image.tag }}"
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 8096
+              protocol: TCP
+            - name: https
+              containerPort: 8920
+              protocol: TCP
+            - name: sdiscovery
+              containerPort: 1900
+              protocol: UDP
+            - name: cdiscovery
+              containerPort: 7359
+              protocol: TCP
+
+          volumeMounts:
+            - name: config
+              mountPath: "/config"
+            - name: cache
+              mountPath: "/cache"
+            - name: media
+              mountPath: "/media"
+      volumes:
+        - name: config
+          persistentVolumeClaim:
+            claimName: config-pvc
+        - name: cache
+          persistentVolumeClaim:
+            claimName: cache-pvc
+        - name: media
+          persistentVolumeClaim:
+            claimName: media-pvc
+{{- with .Values.nodeSelector }}
+nodeSelector:
+{{- toYaml . | nindent 8 }}
+{{- end }}
+{{- with .Values.affinity }}
+affinity:
+{{- toYaml . | nindent 8 }}
+{{- end }}
+{{- with .Values.tolerations }}
+tolerations:
+{{- toYaml . | nindent 8 }}
+{{- end }}
