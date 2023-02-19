@@ -35,8 +35,14 @@ spec:
               mountPath: "/config"
             - name: cache
               mountPath: "/cache"
-            - name: media
-              mountPath: "/media"
+            - name: movies
+              mountPath: "/movies"
+            - name: shows
+              mountPath: "/shows"
+            - name: anime
+              mountPath: "/anime"
+            - name: apps
+              mountPath: "/apps"
       volumes:
         - name: config
           persistentVolumeClaim:
@@ -44,9 +50,18 @@ spec:
         - name: cache
           persistentVolumeClaim:
             claimName: cache-pvc
-        - name: media
+        - name: movies
           persistentVolumeClaim:
-            claimName: media-pvc
+            claimName: movies-pvc
+        - name: shows
+          persistentVolumeClaim:
+            claimName: shows-pvc
+        - name: apps
+          persistentVolumeClaim:
+            claimName: apps-pvc
+        - name: anime
+          persistentVolumeClaim:
+            claimName: anime-pvc
 {{- with .Values.nodeSelector }}
 nodeSelector:
 {{- toYaml . | nindent 8 }}

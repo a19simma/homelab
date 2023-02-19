@@ -39,8 +39,19 @@ spec:
             - name: config
               mountPath: /config/qBittorrent/qBittorrent.conf
               subPath: qBittorrent.conf
-            - name: media
-              mountPath: "/downloads"
+            - name: movies
+              mountPath: "/movies"
+            - name: shows
+              mountPath: "/shows"
+            - name: anime
+              mountPath: "/anime"
+            - name: apps
+              mountPath: "/apps"
+            - name: books
+              mountPath: "/books"
+            - name: torrents
+              mountPath: "/torrents"
+            
       volumes:
         - name: config
           configMap: 
@@ -48,9 +59,24 @@ spec:
             items:
               - key: qBittorrent.conf
                 path: qBittorrent.conf
-        - name: media
+        - name: movies
           persistentVolumeClaim:
-            claimName: media-pvc
+            claimName: movies-pvc
+        - name: shows
+          persistentVolumeClaim:
+            claimName: shows-pvc
+        - name: apps
+          persistentVolumeClaim:
+            claimName: apps-pvc
+        - name: anime
+          persistentVolumeClaim:
+            claimName: anime-pvc
+        - name: books
+          persistentVolumeClaim:
+            claimName: books-pvc
+        - name: torrents
+          persistentVolumeClaim:
+            claimName: torrents-pvc
 {{- with .Values.nodeSelector }}
 nodeSelector:
 {{- toYaml . | nindent 8 }}
