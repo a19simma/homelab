@@ -38,6 +38,7 @@ spec:
           volumeMounts:
             - name: config
               mountPath: "/config/qBittorrent"
+              readonly: false
             - name: movies
               mountPath: "/movies"
             - name: shows
