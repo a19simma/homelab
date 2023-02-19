@@ -45,8 +45,8 @@ spec:
               mountPath: "/shows"
             - name: anime
               mountPath: "/anime"
-            - name: apps
-              mountPath: "/apps"
+            - name: software
+              mountPath: "/software"
             - name: books
               mountPath: "/books"
             - name: torrents
@@ -65,9 +65,9 @@ spec:
         - name: shows
           persistentVolumeClaim:
             claimName: shows-pvc
-        - name: apps
+        - name: software
           persistentVolumeClaim:
-            claimName: apps-pvc
+            claimName: software-pvc
         - name: anime
           persistentVolumeClaim:
             claimName: anime-pvc

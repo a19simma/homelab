@@ -9,18 +9,4 @@ spec:
   resources:
     requests:
       storage: 3Ti
----
-apiVersion: v1
-kind: PersistentVolume
-metadata:
-  name: movies-pv
-spec:
-  capacity:
-    storage: 3Ti
-  volumeMode: Filesystem
-  accessModes:
-    - ReadWriteMany
-  persistentVolumeReclaimPolicy: Retain
-  storageClassName: nfs-client
-  claimRef:
-    name: movies-pv
+  volumeName: movies-pv

@@ -41,8 +41,8 @@ spec:
               mountPath: "/shows"
             - name: anime
               mountPath: "/anime"
-            - name: apps
-              mountPath: "/apps"
+            - name: software
+              mountPath: "/software"
       volumes:
         - name: config
           persistentVolumeClaim:
@@ -56,9 +56,9 @@ spec:
         - name: shows
           persistentVolumeClaim:
             claimName: shows-pvc
-        - name: apps
+        - name: software
           persistentVolumeClaim:
-            claimName: apps-pvc
+            claimName: software-pvc
         - name: anime
           persistentVolumeClaim:
             claimName: anime-pvc

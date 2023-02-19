@@ -9,18 +9,4 @@ spec:
   resources:
     requests:
       storage: 1Gi
----
-apiVersion: v1
-kind: PersistentVolume
-metadata:
-  name: torrents-pv
-spec:
-  capacity:
-    storage: 1Gi
-  volumeMode: Filesystem
-  accessModes:
-    - ReadWriteMany
-  persistentVolumeReclaimPolicy: Retain
-  storageClassName: ceph-filesystem
-  claimRef:
-    name: torrents-pvc
+  volumeName: torrents-pv
