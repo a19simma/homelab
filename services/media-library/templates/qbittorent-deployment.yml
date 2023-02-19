@@ -42,8 +42,7 @@ spec:
               protocol: UDP
           volumeMounts:
             - name: config
-              mountPath: /config/qBittorrent/qBittorrent.conf
-              subPath: qBittorrent.conf
+              mountPath: "/config"
             - name: movies
               mountPath: "/movies"
             - name: shows
@@ -59,11 +58,8 @@ spec:
             
       volumes:
         - name: config
-          configMap: 
-            name: qbittorrent-config
-            items:
-              - key: qBittorrent.conf
-                path: qBittorrent.conf
+          persistentVolumeClaime:
+            claimname: qbittorrent-pvc
         - name: movies
           persistentVolumeClaim:
             claimName: movies-pvc
