@@ -51,6 +51,8 @@ spec:
               mountPath: "/books"
             - name: torrents
               mountPath: "/torrents"
+            - name: music
+              mountPath: "/music"
             
       volumes:
         - name: config
@@ -75,6 +77,9 @@ spec:
         - name: torrents
           persistentVolumeClaim:
             claimName: torrents-pvc
+        - name: music
+          persistentVolumeClaim:
+            claimName: music-pvc
 {{- with .Values.nodeSelector }}
 nodeSelector:
 {{- toYaml . | nindent 8 }}

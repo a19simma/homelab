@@ -43,6 +43,8 @@ spec:
               mountPath: "/anime"
             - name: software
               mountPath: "/software"
+            - name: music
+              mountPath: "/music"
       volumes:
         - name: config
           persistentVolumeClaim:
@@ -62,6 +64,9 @@ spec:
         - name: anime
           persistentVolumeClaim:
             claimName: anime-pvc
+        - name: music
+          persistentVolumeClaim:
+            claimName: music-pvc
 {{- with .Values.nodeSelector }}
 nodeSelector:
 {{- toYaml . | nindent 8 }}
