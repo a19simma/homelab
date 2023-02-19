@@ -56,7 +56,7 @@ spec:
         - name: config
           secret:
             secretName: qbittorrent-conf
-              path: qBittorrent.conf
+            path: qBittorrent.conf
         - name: movies
           persistentVolumeClaim:
             claimName: movies-pvc
