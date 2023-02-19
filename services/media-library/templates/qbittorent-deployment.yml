@@ -29,7 +29,7 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: qbittorrent-admin
-                  key: password
+                  key:
           ports:
             - name: http
               containerPort: 8080
@@ -42,7 +42,8 @@ spec:
               protocol: UDP
           volumeMounts:
             - name: config
-              mountPath: "/config"
+              mountPath: /config/qBittorrent/qBittorrent.conf
+              subPath: qBittorrent.conf
             - name: movies
               mountPath: "/movies"
             - name: shows
@@ -58,8 +59,11 @@ spec:
             
       volumes:
         - name: config
-          persistentVolumeClaime:
-            claimname: qbittorrent-pvc
+          secret:
+            secretName: qbittorrent-conf
+            items:
+              - key: qBittorrent.conf
+                path: qBittorrent.conf
         - name: movies
           persistentVolumeClaim:
             claimName: movies-pvc
