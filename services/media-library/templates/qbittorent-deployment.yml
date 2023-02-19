@@ -43,6 +43,7 @@ spec:
           volumeMounts:
             - name: config
               mountPath: /config/qBittorrent
+              readonly: true
             - name: movies
               mountPath: "/movies"
             - name: shows
@@ -60,8 +61,6 @@ spec:
         - name: config
           secret:
             secretName: qbittorrent-conf
-              items:
-                - key: qBittorrent.conf
 
         - name: movies
           persistentVolumeClaim:
