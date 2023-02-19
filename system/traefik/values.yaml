@@ -16,8 +16,8 @@ traefik:
     initContainers: []
 
   ports:
-    web:
-      redirectTo: websecure
+    web: 
+      port: 8000     
     websecure:
       tls:
         enabled: true
