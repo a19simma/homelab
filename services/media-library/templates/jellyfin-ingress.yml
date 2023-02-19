@@ -20,4 +20,4 @@ spec:
           port: 8080
 
   tls:
-    secretName: simonmalm-com-tls
+    secretName: local-example-com-staging-tls
