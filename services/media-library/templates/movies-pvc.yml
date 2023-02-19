@@ -9,4 +9,3 @@ spec:
   resources:
     requests:
       storage: 3Ti
-  volumeName: movies-pv
