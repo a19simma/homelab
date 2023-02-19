@@ -37,8 +37,8 @@ spec:
               protocol: UDP
           volumeMounts:
             - name: config
-              mountPath: "/config/qBittorrent/qBittorrent.conf"
-              readonly: false
+              mountPath: "/config/qBittorrent"
+              readOnly: false
             - name: movies
               mountPath: "/movies"
             - name: shows
