@@ -18,6 +18,3 @@ spec:
       services:
         - name: jellyfin-service
           port: 8080
-
-  tls:
-    secretName: simonmalm-com-tls
