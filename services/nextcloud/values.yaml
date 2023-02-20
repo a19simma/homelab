@@ -1,21 +1,30 @@
 nextcloud:
   nextcloud:
     host: nextcloud.kube.home
-    username: ~
+    username: admin
     password: ~
     ## Use an existing secret
     existingSecret:
       enabled: true
       secretName: nextcloud-secret
-      usernameKey: username
       passwordKey: password
       # tokenKey: nextcloud-token
       # smtpUsernameKey: smtp-username
       # smtpPasswordKey: smtp-password
+      extraVolumes:
+      #  - name: nfs
+      #    nfs:
+      #      server: "10.0.0.1"
+      #      path: "/nextcloud_data"
+      #      readOnly: false
+      extraVolumeMounts:
+      #  - name: nfs
+      #    mountPath: "/legacy_data"
   persistence:
     # Nextcloud Data (/var/www/html)
     enabled: true
     storageClass: ceph-filesystem
+    size: 100Gi
 
   livenessProbe:
     enabled: true
