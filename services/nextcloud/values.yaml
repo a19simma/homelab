@@ -43,11 +43,10 @@ nextcloud:
   persistence:
     # Nextcloud Data (/var/www/html)
     enabled: true
-    storageClass: ceph-Block
+    storageClassName: ceph-Block
     size: 8Gi
     nextcloudData:
       enabled: true
-      subPath:
       existingClaim: nextcloud-pvc
       accessMode: ReadWriteMany
       size: 3Ti
