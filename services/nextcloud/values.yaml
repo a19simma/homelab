@@ -17,15 +17,29 @@ nextcloud:
       # tokenKey: nextcloud-token
       # smtpUsernameKey: smtp-username
       # smtpPasswordKey: smtp-password
-      extraVolumes:
-      #  - name: nfs
-      #    nfs:
-      #      server: "10.0.0.1"
-      #      path: "/nextcloud_data"
-      #      readOnly: false
-      extraVolumeMounts:
-      #  - name: nfs
-      #    mountPath: "/legacy_data"
+    custom.config.php: |-
+      <?php
+      $CONFIG = array (
+        'overwriteprotocol' => 'https',
+        'overwrite.cli.url' => 'https://nextcloud.simonmalm.com',
+        'filelocking.enabled' => 'true',
+        'loglevel' => '2',
+        'enable_previews' => true,
+        'trusted_domains' =>
+           [
+            'nextcloud',
+            'nextcloud.simonmalm.com'
+           ]
+      );
+    extraVolumes:
+    #  - name: nfs
+    #    nfs:
+    #      server: "10.0.0.1"
+    #      path: "/nextcloud_data"
+    #      readOnly: false
+    extraVolumeMounts:
+    #  - name: nfs
+    #    mountPath: "/legacy_data"
   persistence:
     # Nextcloud Data (/var/www/html)
     enabled: true
