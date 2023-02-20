@@ -1,0 +1,18 @@
+nextcloud:
+  nextcloud:
+    host: nextcloud.kube.home
+    username: ~
+    password: ~
+    ## Use an existing secret
+    existingSecret:
+      enabled: true
+      secretName: nextcloud-secret
+      usernameKey: username
+      passwordKey: password
+      # tokenKey: nextcloud-token
+      # smtpUsernameKey: smtp-username
+      # smtpPasswordKey: smtp-password
+  persistence:
+    # Nextcloud Data (/var/www/html)
+    enabled: true
+    storageClass: nfs-client
