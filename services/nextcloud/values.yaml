@@ -48,7 +48,6 @@ nextcloud:
     nextcloudData:
       enabled: true
       subPath:
-      storageClass: manual
       existingClaim: nextcloud-pvc
       accessMode: ReadWriteMany
       size: 3Ti
