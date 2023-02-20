@@ -49,7 +49,7 @@ nextcloud:
       enabled: true
       subPath:
       storageClass: manual
-      existingClaim:
+      existingClaim: nextcloud-pvc
       accessMode: ReadWriteMany
       size: 3Ti
   nginx:
