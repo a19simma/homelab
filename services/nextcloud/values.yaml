@@ -1,12 +1,11 @@
 nextcloud:
   nextcloud:
     host: nextcloud.kube.home
-    username: admin
-    password: ~
     ## Use an existing secret
     existingSecret:
       enabled: true
       secretName: nextcloud-secret
+      usernameKey: username
       passwordKey: password
       # tokenKey: nextcloud-token
       # smtpUsernameKey: smtp-username
@@ -24,7 +23,7 @@ nextcloud:
     # Nextcloud Data (/var/www/html)
     enabled: true
     storageClass: ceph-filesystem
-    size: 100Gi
+    size: Gi
 
   livenessProbe:
     enabled: true
