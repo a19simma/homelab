@@ -24,11 +24,6 @@ nextcloud:
     enabled: true
     storageClass: ceph-filesystem
     size: 100Gi
-  redis:
-    enabled: true
-    auth:
-      enabled: true
-      password: 'changeme'
 
   livenessProbe:
     enabled: true
