@@ -15,7 +15,7 @@ nextcloud:
   persistence:
     # Nextcloud Data (/var/www/html)
     enabled: true
-    storageClass: nfs-client
+    storageClass: ceph-filesystem
 
   livenessProbe:
     enabled: true
