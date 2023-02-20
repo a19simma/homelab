@@ -26,7 +26,7 @@ nextcloud:
     successThreshold: 1
   readinessProbe:
     enabled: true
-    initialDelaySeconds: 10
+    initialDelaySeconds: 120
     periodSeconds: 10
     timeoutSeconds: 5
     failureThreshold: 3
