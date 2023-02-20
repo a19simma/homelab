@@ -1,5 +1,4 @@
-{{- /*
- apiVersion: traefik.containo.us/v1alpha1
+apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
   name: nextcloud
@@ -12,15 +11,13 @@ spec:
     - match: Host(`nextcloud.simonmalm.com`)
       kind: Rule
       services:
-        - name: gitea-http
-          port: 3000
+        - name: nextcloud
+          port: 8080
     - match: Host(`nextcloud.local.simonmalm.com`)
       kind: Rule
       services:
-        - name: gitea-http
-          port: 3000
+        - name: nextcloud
+          port: 8080
 
   tls:
     secretName: simonmalm-com-tls
- 
-*/ -}}
