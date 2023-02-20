@@ -3,9 +3,29 @@ kind: PersistentVolumeClaim
 metadata:
   name: shows-pvc
 spec:
-  storageClassName: nfs-client
+  storageClassName: manual
   accessModes:
     - ReadWriteMany
   resources:
     requests:
       storage: 3Ti
+  volumeName: shows-pv
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: shows-pv
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 3Ti
+  persistentVolumeReclaimPolicy: Retain
+  accessModes:
+    - ReadWriteMany
+  nfs:
+    server: 192.168.1.4
+    path: "/mnt/default/shows"
+  mountOptions:
+    - nfsvers=4.2
+  claimRef: 
+    name: shows-pvc
