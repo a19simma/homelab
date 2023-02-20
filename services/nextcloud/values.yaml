@@ -3,7 +3,7 @@ nextcloud:
     repository: nextcloud
     tag: 24.0.3-apache
   nextcloud:
-    host: nextcloud.kube.home
+    host: nextcloud.simonmalm.com
     ## Use an existing secret
     existingSecret:
       enabled: false
