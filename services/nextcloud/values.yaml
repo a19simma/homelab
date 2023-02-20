@@ -23,7 +23,7 @@ nextcloud:
     # Nextcloud Data (/var/www/html)
     enabled: true
     storageClass: ceph-filesystem
-    size: Gi
+    size: 100Gi
 
   livenessProbe:
     enabled: true
