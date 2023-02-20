@@ -2,7 +2,7 @@ nextcloud:
   phpClientHttpsFix:
     enabled: true
     protocol: https
-    
+
   nextcloud:
     host: nextcloud.simonmalm.com
     ## Use an existing secret
@@ -28,13 +28,6 @@ nextcloud:
     enabled: true
     storageClass: ceph-filesystem
     size: 100Gi
-  nginx:
-  ## You need to set an fpm version of the image for nextcloud if you want to use nginx!
-    enabled: true
-    image:
-      repository: nginx
-      tag: alpine
-      pullPolicy: IfNotPresent
 
   livenessProbe:
     enabled: true
