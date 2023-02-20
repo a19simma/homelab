@@ -6,7 +6,6 @@ nextcloud:
   phpClientHttpsFix:
     enabled: true
     protocol: https
-
   nextcloud:
     host: nextcloud.simonmalm.com
     ## Use an existing secret
