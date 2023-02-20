@@ -43,8 +43,15 @@ nextcloud:
   persistence:
     # Nextcloud Data (/var/www/html)
     enabled: true
-    storageClass: ceph-filesystem
-    size: 100Gi
+    storageClass: ceph-Block
+    size: 8Gi
+    nextcloudData:
+      enabled: true
+      subPath:
+      storageClass: manual
+      existingClaim:
+      accessMode: ReadWriteMany
+      size: 3Ti
   nginx:
     ## You need to set an fpm version of the image for nextcloud if you want to use nginx!
     enabled: true
