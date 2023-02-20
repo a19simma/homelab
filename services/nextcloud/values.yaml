@@ -1,4 +1,8 @@
 nextcloud:
+  image:
+    repository: nextcloud
+    flavor: fpm
+    pullPolicy: IfNotPresent
   phpClientHttpsFix:
     enabled: true
     protocol: https
@@ -28,6 +32,9 @@ nextcloud:
     enabled: true
     storageClass: ceph-filesystem
     size: 100Gi
+  nginx:
+    ## You need to set an fpm version of the image for nextcloud if you want to use nginx!
+    enabled: true
 
   livenessProbe:
     enabled: disable
