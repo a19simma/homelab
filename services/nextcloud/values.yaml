@@ -1,9 +1,11 @@
 nextcloud:
   nextcloud:
     host: nextcloud.kube.home
+    password: password
+    username: admin
     ## Use an existing secret
     existingSecret:
-      enabled: true
+      enabled: false
       secretName: nextcloud-secret
       usernameKey: username
       passwordKey: password
