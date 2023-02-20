@@ -1,7 +1,8 @@
 nextcloud:
-  image:
-    repository: nextcloud
-    tag: 24.0.3-apache
+  phpClientHttpsFix:
+    enabled: true
+    protocol: https
+    
   nextcloud:
     host: nextcloud.simonmalm.com
     ## Use an existing secret
