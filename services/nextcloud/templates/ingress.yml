@@ -6,7 +6,7 @@ metadata:
     kubernetes.io/ingress.class: traefik-external
 spec:
   entryPoints:
-    - websecure
+    - web
   routes:
     - match: Host(`nextcloud.simonmalm.com`)
       kind: Rule
@@ -18,6 +18,8 @@ spec:
       services:
         - name: nextcloud
           port: 8080
-
+{{- /*
+ 
   tls:
-    secretName: simonmalm-com-tls
+    secretName: simonmalm-com-tls 
+*/ -}}
