@@ -5,7 +5,7 @@ jellyfin:
   replicaCount: 1
   image:
     repository: jellyfin/jellyfin
-    tag: latest
+    tag: 10.8.8
 
 qbittorrent:
   replicaCount: 1
