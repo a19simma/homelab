@@ -19,4 +19,4 @@ spec:
         - name: jellyfin-service
           port: 8080
   tls:
-    secretName: self-signed-simonmalm-com-tls
+    secretName: simonmalm-com-tls
