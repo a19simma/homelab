@@ -20,5 +20,5 @@ spec:
           port: 8080
  
   tls:
-    secretName: simonmalm-com-tls 
+    secretName: self-signed-simonmalm-com-tls
 
