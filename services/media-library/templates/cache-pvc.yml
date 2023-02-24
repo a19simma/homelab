@@ -8,7 +8,7 @@ spec:
     - ReadWriteMany
   resources:
     requests:
-      storage: 10Mi
+      storage: 200Mi
   volumeName: cache-pv
 ---
 apiVersion: v1
@@ -18,7 +18,7 @@ metadata:
 spec:
   storageClassName: manual
   capacity:
-    storage: 10Mi
+    storage: 200Mi
   persistentVolumeReclaimPolicy: Retain
   accessModes:
     - ReadWriteMany
