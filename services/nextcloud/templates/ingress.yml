@@ -20,5 +20,5 @@ spec:
           port: 8080
  
   tls:
-    secretName: self-signed-simonmalm-com-tls
+    secretName: nextcloud-simonmalm-com
 

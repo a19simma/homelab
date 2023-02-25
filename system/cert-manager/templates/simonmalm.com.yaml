@@ -27,3 +27,17 @@ spec:
   commonName: "jellyfin.simonmalm.com"
   dnsNames:
     - "jellyfin.simonmalm.com"
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: nextcloud-simonmalm-com
+  namespace: nextcloud
+spec:
+  secretName: nextcloud-simonmalm-com
+  issuerRef:
+    name: letsencrypt-production-http01
+    kind: ClusterIssuer
+  commonName: "nextcloud.simonmalm.com"
+  dnsNames:
+    - "nextcloud.simonmalm.com"
