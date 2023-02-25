@@ -6,17 +6,18 @@ metadata:
     kubernetes.io/ingress.class: traefik-external
 spec:
   entryPoints:
+    - web
     - websecure
   routes:
     - match: Host(`jellyfin.simonmalm.com`)
       kind: Rule
       services:
         - name: jellyfin-service
-          port: 8080
+          port: 8096
     - match: Host(`jellyfin.local.simonmalm.com`)
       kind: Rule
       services:
         - name: jellyfin-service
-          port: 8080
+          port: 8096
   tls:
-    secretName: simonmalm-com-tls
+    secretName: simonmalm-com-http01

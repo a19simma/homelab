@@ -16,6 +16,9 @@ spec:
         - name: jellyfin-server
           image: "{{ .Values.jellyfin.image.repository }}:{{ .Values.jellyfin.image.tag }}"
           imagePullPolicy: IfNotPresent
+          env: 
+            - name: JELLYFIN_PublishedServerUrl
+              value: https://jellyfin.simonmalm.com
           ports:
             - name: http
               containerPort: 8096

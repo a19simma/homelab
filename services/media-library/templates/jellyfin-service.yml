@@ -7,5 +7,5 @@ spec:
     {{- include "media-library.selectorLabels" . | nindent 4 }}
   ports:
     - protocol: TCP
-      port: 8080
+      port: 8096
       targetPort: 8096
