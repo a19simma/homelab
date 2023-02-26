@@ -27,6 +27,3 @@ spec:
     path: "/mnt/default/anime"
   mountOptions:
     - nfsvers=4.2
-  claimRef: 
-    name: anime-pvc
-    namespace: {{ .Release.Namespace }}

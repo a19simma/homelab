@@ -27,6 +27,3 @@ spec:
     path: "/mnt/default/torrents"
   mountOptions:
     - nfsvers=4.2
-  claimRef: 
-    name: torrents-pvc
-    namespace: {{ .Release.Namespace }}

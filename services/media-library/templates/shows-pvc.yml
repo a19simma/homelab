@@ -26,7 +26,3 @@ spec:
     server: 192.168.1.4
     path: "/mnt/default/shows"
   mountOptions:
-    - nfsvers=4.2
-  claimRef: 
-    name: shows-pvc
-    namespace: {{ .Release.Namespace }}

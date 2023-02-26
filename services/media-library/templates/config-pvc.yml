@@ -27,6 +27,3 @@ spec:
     path: "/mnt/default/config"
   mountOptions:
     - nfsvers=4.2
-  claimRef: 
-    name: config-pvc
-    namespace: {{ .Release.Namespace }}

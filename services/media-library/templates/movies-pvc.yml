@@ -27,6 +27,3 @@ spec:
     path: "/mnt/default/movies"
   mountOptions:
     - nfsvers=4.2
-  claimRef: 
-    name: movies-pvc
-    namespace: {{ .Release.Namespace }}

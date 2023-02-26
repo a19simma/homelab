@@ -27,6 +27,3 @@ spec:
     path: "/mnt/default/nextcloud"
   mountOptions:
     - nfsvers=4.2
-  claimRef: 
-    name: nextcloud-pvc
-    namespace: {{ .Release.Namespace }}

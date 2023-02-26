@@ -27,6 +27,3 @@ spec:
     path: "/mnt/default/cache"
   mountOptions:
     - nfsvers=4.2
-  claimRef: 
-    name: cache-pvc
-    namespace: {{ .Release.Namespace }}
