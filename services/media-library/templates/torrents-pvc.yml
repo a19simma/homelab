@@ -3,9 +3,30 @@ kind: PersistentVolumeClaim
 metadata:
   name: torrents-pvc
 spec:
-  storageClassName: ceph-filesystem
+  storageClassName: manual
   accessModes:
     - ReadWriteMany
   resources:
     requests:
       storage: 1Gi
+  volumeName: torrents-pv
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: torrents-pv
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 1Gi
+  persistentVolumeReclaimPolicy: Retain
+  accessModes:
+    - ReadWriteMany
+  nfs:
+    server: 192.168.1.4
+    path: "/mnt/default/torrents"
+  mountOptions:
+    - nfsvers=4.2
+  claimRef: 
+    name: torrents-pvc
+    namespace: {{ .Release.Namespace }}
