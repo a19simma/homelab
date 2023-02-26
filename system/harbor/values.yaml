@@ -4,3 +4,9 @@ harbor:
     type: clusterIP
     tls: 
       enabled: false
+  jobservice:
+    replicas: 1
+    revisionHistoryLimit: 1
+  notary:
+    server: 
+      automountServiceAccountToken: true
