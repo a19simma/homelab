@@ -1,0 +1,124 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: harbor
+  namespace: harbor
+  annotations:
+    kubernetes.io/ingress.class: traefik-external
+spec:
+  routes:
+    - kind: Rule
+      match: Host(`harbor.local.simonmalm.com`)
+      priority: 1
+      services:
+        - kind: Service
+          name: harbor-portal
+          namespace: harbor
+          port: 80
+    - kind: Rule
+      match: Host(`harbor.local.simonmalm.com`) && PathPrefix(`/`)
+      priority: 1
+      services:
+        - kind: Service
+          name: harbor-portal
+          namespace: harbor
+          port: 80
+    - kind: Rule
+      match: Host(`harbor.local.simonmalm.com`) && PathPrefix(`/c/`)
+      priority: 10
+      services:
+        - kind: Service
+          name: harbor-core
+          namespace: harbor
+          port: 80
+    - kind: Rule
+      match: Host(`harbor.local.simonmalm.com`) && PathPrefix(`/api/`)
+      priority: 10
+      services:
+        - kind: Service
+          name: harbor-core
+          namespace: harbor
+          port: 80
+    - kind: Rule
+      match: Host(`harbor.local.simonmalm.com`) && PathPrefix(`/service/`)
+      priority: 10
+      services:
+        - kind: Service
+          name: harbor-core
+          namespace: harbor
+          port: 80
+    - kind: Rule
+      match: Host(`harbor.local.simonmalm.com`) && PathPrefix(`/v2/`)
+      priority: 10
+      services:
+        - kind: Service
+          name: harbor-core
+          namespace: harbor
+          port: 80
+    - kind: Rule
+      match: Host(`harbor.local.simonmalm.com`) && PathPrefix(`/chartrepo/`)
+      priority: 10
+      services:
+        - kind: Service
+          name: harbor-core
+          namespace: harbor
+          port: 80
+    - kind: Rule
+      match: Host(`harbor.simonmalm.com`)
+      priority: 1
+      services:
+        - kind: Service
+          name: harbor-portal
+          namespace: harbor
+          port: 80
+    - kind: Rule
+      match: Host(`harbor.simonmalm.com`) && PathPrefix(`/`)
+      priority: 1
+      services:
+        - kind: Service
+          name: harbor-portal
+          namespace: harbor
+          port: 80
+    - kind: Rule
+      match: Host(`harbor.simonmalm.com`) && PathPrefix(`/c/`)
+      priority: 10
+      services:
+        - kind: Service
+          name: harbor-core
+          namespace: harbor
+          port: 80
+    - kind: Rule
+      match: Host(`harbor.simonmalm.com`) && PathPrefix(`/api/`)
+      priority: 10
+      services:
+        - kind: Service
+          name: harbor-core
+          namespace: harbor
+          port: 80
+    - kind: Rule
+      match: Host(`harbor.simonmalm.com`) && PathPrefix(`/service/`)
+      priority: 10
+      services:
+        - kind: Service
+          name: harbor-core
+          namespace: harbor
+          port: 80
+    - kind: Rule
+      match: Host(`harbor.simonmalm.com`) && PathPrefix(`/v2/`)
+      priority: 10
+      services:
+        - kind: Service
+          name: harbor-core
+          namespace: harbor
+          port: 80
+    - kind: Rule
+      match: Host(`harbor.simonmalm.com`) && PathPrefix(`/chartrepo/`)
+      priority: 10
+      services:
+        - kind: Service
+          name: harbor-core
+          namespace: harbor
+          port: 80
+
+  tls:
+    secretName: harbor-simonmalm-com

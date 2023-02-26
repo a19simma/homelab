@@ -41,3 +41,17 @@ spec:
   commonName: "nextcloud.simonmalm.com"
   dnsNames:
     - "nextcloud.simonmalm.com"
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: harbor-simonmalm-com
+  namespace: harbor
+spec:
+  secretName: harbor-simonmalm-com
+  issuerRef:
+    name: letsencrypt-production-http01
+    kind: ClusterIssuer
+  commonName: "harbor.simonmalm.com"
+  dnsNames:
+    - "harbor.simonmalm.com"
