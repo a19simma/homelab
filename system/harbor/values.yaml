@@ -4,8 +4,8 @@ harbor:
     type: ingress
     tls:
       enabled: false
-  ingress:
-    hosts:
-      core: core.harbor.simonmalm.com
-      notary: notary.harbor.simonmalm.com
- 
+    ingress:
+      hosts:
+        core: core.harbor.simonmalm.com
+        notary: notary.harbor.simonmalm.com
+  
