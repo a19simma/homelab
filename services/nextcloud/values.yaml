@@ -38,12 +38,11 @@ nextcloud:
     #      server: "10.0.0.1"
     #      path: "/nextcloud_data"
     #      readOnly: false
-      - name: torrents
-        persistentVolumeClaim:
-          claimName: torrents-pvc
+    - name: torrents
+      persistentVolumeClaim:
+        claimName: torrents-pvc
     extraVolumeMounts:
     - name: torrents
-      namespace: media-library
       mountPath: "/data/torrents"
     #  - name: nfs
     #    mountPath: "/legacy_data"
