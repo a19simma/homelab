@@ -1,2 +1,4 @@
 harbor:
   externalURL: https://harbor.simonmalm.com
+  expose:
+    type: clusterIP
