@@ -8,6 +8,7 @@ nextcloud:
     protocol: https
   nextcloud:
     host: nextcloud.simonmalm.com
+    datadir: /data
     ## Use an existing secret
     existingSecret:
       enabled: false
@@ -38,12 +39,14 @@ nextcloud:
     #      path: "/nextcloud_data"
     #      readOnly: false
     extraVolumeMounts:
+    - name: torrents-pv
+      mountPath: "/data/torrents"
     #  - name: nfs
     #    mountPath: "/legacy_data"
   persistence:
     # Nextcloud Data (/var/www/html)
     enabled: true
-    storageClassName: ceph-Block
+    storageClassName: ""
     size: 8Gi
     nextcloudData:
       enabled: true
