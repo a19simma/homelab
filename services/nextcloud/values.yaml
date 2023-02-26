@@ -51,7 +51,7 @@ nextcloud:
   persistence:
     # Nextcloud Data (/var/www/html)
     enabled: true
-    storageClassName: ceph-filesystem
+    storageClassName: "ceph-filesystem"
     size: 8Gi
     nextcloudData:
       enabled: true
