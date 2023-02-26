@@ -41,6 +41,8 @@ spec:
               subPath: qBittorrent.conf
             - name: movies
               mountPath: "/movies"
+            - name: downloads
+              mountPath: "/downloads"
             - name: shows
               mountPath: "/shows"
             - name: anime
@@ -61,6 +63,9 @@ spec:
         - name: movies
           persistentVolumeClaim:
             claimName: movies-pvc
+        - name: downloads
+          persistentVolumeClaim:
+            claimName: downloads-pvc
         - name: shows
           persistentVolumeClaim:
             claimName: shows-pvc
