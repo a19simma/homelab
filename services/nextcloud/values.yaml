@@ -40,6 +40,7 @@ nextcloud:
     #      readOnly: false
     extraVolumeMounts:
     - name: torrents-pvc
+      namespace: media-library
       mountPath: "/data/torrents"
     #  - name: nfs
     #    mountPath: "/legacy_data"
