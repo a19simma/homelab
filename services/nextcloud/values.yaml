@@ -45,7 +45,7 @@ nextcloud:
         readOnly: false
     extraVolumeMounts:
     - name: torrents
-      mountPath: "/data/torrents"
+      mountPath: "/data/admin/files/torrents"
     #  - name: nfs
     #    mountPath: "/legacy_data"
   persistence:
