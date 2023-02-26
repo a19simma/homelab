@@ -39,7 +39,7 @@ nextcloud:
     #      path: "/nextcloud_data"
     #      readOnly: false
     extraVolumeMounts:
-    - name: torrents-pv
+    - name: torrents-pvc
       mountPath: "/data/torrents"
     #  - name: nfs
     #    mountPath: "/legacy_data"
