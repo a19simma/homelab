@@ -10,5 +10,5 @@ jellyfin:
 qbittorrent:
   replicaCount: 1
   image:
-    repository: https://hub.docker.com/r/hotio/qbittorrent
+    repository: hotio/qbittorrent
     tag: latest
