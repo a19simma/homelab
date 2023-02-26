@@ -1,11 +1,2 @@
 harbor:
   externalURL: https://harbor.simonmalm.com
-  expose:
-    type: ingress
-    tls:
-      enabled: false
-    ingress:
-      hosts:
-        core: core.harbor.simonmalm.com
-        notary: notary.harbor.simonmalm.com
-  
