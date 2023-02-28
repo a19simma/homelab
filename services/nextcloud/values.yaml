@@ -43,9 +43,16 @@ nextcloud:
         server: "192.168.1.4"
         path: "/mnt/default/torrents"
         readOnly: false
+    - name: books
+      nfs:
+        server: "192.168.1.4"
+        path: "/mnt/default/books"
+        readOnly: false
     extraVolumeMounts:
     - name: torrents
       mountPath: "/data/admin/files/torrents"
+    - name: books
+      mountPath: "/data/admin/files/books"
     #  - name: nfs
     #    mountPath: "/legacy_data"
   persistence:
