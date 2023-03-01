@@ -3,7 +3,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: qbit-config-pvc
 spec:
-  storageClassName: nfs-cient
+  storageClassName: nfs-client
   accessModes:
     - ReadWriteMany
   resources:
