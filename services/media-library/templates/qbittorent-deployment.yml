@@ -57,8 +57,10 @@ spec:
             
       volumes:
         - name: config
-          persistentVolumeClaim:
-            claimName: qbit-config-pvc
+          nfs:
+            server: "192.168.1.4"
+            path: "/mnt/default/qbit-config"
+            readOnly: false
         - name: movies
           persistentVolumeClaim:
             claimName: movies-pvc
