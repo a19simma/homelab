@@ -3,9 +3,9 @@ kind: PersistentVolumeClaim
 metadata:
   name: qbit-config-pvc
 spec:
-  storageClassName: ceph-filesystem
+  storageClassName: nfs-cient
   accessModes:
     - ReadWriteMany
   resources:
     requests:
-      storage: 1Gi
+      storage: 100Mi
