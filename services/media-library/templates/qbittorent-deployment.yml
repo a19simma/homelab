@@ -65,8 +65,10 @@ spec:
           persistentVolumeClaim:
             claimName: movies-pvc
         - name: downloads
-          persistentVolumeClaim:
-            claimName: downloads-pvc
+          nfs:
+            server: "192.168.1.4"
+            path: "/mnt/default/downloads"
+            readOnly: false
         - name: shows
           persistentVolumeClaim:
             claimName: shows-pvc
