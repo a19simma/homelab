@@ -5,10 +5,10 @@ jellyfin:
   replicaCount: 1
   image:
     repository: jellyfin/jellyfin
-    tag: 10.8.1
+    tag: latest
 
 qbittorrent:
   replicaCount: 1
   image:
     repository: hotio/qbittorrent
-    tag: release-4.5.1
+    tag: latest
