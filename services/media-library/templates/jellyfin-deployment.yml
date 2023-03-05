@@ -48,6 +48,8 @@ spec:
               mountPath: "/software"
             - name: music
               mountPath: "/music"
+            - name: audiobooks
+              mountPath: "/audiobooks"
       volumes:
         - name: config
           persistentVolumeClaim:
@@ -70,6 +72,11 @@ spec:
         - name: music
           persistentVolumeClaim:
             claimName: music-pvc
+        - name: audiobooks
+          nfs:
+            server: "192.168.1.4"
+            path: "/mnt/default/audiobooks"
+            readOnly: false
 {{- with .Values.nodeSelector }}
 nodeSelector:
 {{- toYaml . | nindent 8 }}

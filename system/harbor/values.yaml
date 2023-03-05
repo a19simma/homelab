@@ -10,3 +10,10 @@ harbor:
   notary:
     server: 
       automountServiceAccountToken: true
+  persistence:
+    persistentVolumeClaim:
+      registry:
+        storageClass: ceph-filesystem
+      jobservice:
+        storageClass: ceph-filesystem
+
