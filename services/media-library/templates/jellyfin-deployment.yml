@@ -50,6 +50,8 @@ spec:
               mountPath: "/music"
             - name: audiobooks
               mountPath: "/audiobooks"
+            - name: books
+              mountPath: "/books"
       volumes:
         - name: config
           persistentVolumeClaim:
@@ -76,6 +78,11 @@ spec:
           nfs:
             server: "192.168.1.4"
             path: "/mnt/default/audiobooks"
+            readOnly: false
+        - name: books
+          nfs:
+            server: "192.168.1.4"
+            path: "/mnt/default/books"
             readOnly: false
 {{- with .Values.nodeSelector }}
 nodeSelector:
