@@ -11,7 +11,7 @@ nextcloud:
     datadir: /data
     ## Use an existing secret
     existingSecret:
-      enabled: false
+      enabled: true
       secretName: nextcloud-secret
       usernameKey: username
       passwordKey: password
