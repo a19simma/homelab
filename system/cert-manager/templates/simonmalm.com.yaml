@@ -62,7 +62,7 @@ metadata:
   name: gitea-simonmalm-com
   namespace: gitea
 spec:
-  secretName: harbor-simonmalm-com
+  secretName: gitea-simonmalm-com
   issuerRef:
     name: letsencrypt-production-http01
     kind: ClusterIssuer
