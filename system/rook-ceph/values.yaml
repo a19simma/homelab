@@ -778,7 +778,7 @@ rook-ceph-cluster:
     #   # enable host networking
     #   provider: host
     #   # EXPERIMENTAL: enable the Multus network provider
-        provider: multus
+        # provider: multus
     #   selectors:
     #     # The selector keys are required to be `public` and `cluster`.
     #     # Based on the configuration, the operator will do the following:
