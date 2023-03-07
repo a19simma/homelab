@@ -39,3 +39,7 @@ gitea:
         servicePort: 5432
     persistence:
       size: 10Gi
+
+  persistence:
+    enabled: true
+    existingClaim: gitea-pvc
