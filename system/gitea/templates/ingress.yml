@@ -8,12 +8,12 @@ spec:
   entryPoints:
     - websecure
   routes:
-    - match: Host(`git.simonmalm.com`)
+    - match: Host(`gitea.simonmalm.com`)
       kind: Rule
       services:
         - name: gitea-http
           port: 3000
-    - match: Host(`git.local.simonmalm.com`)
+    - match: Host(`gitea.local.simonmalm.com`)
       kind: Rule
       services:
         - name: gitea-http
