@@ -10,7 +10,7 @@ gitea:
     config:
       server:
         domain:
-        ROOT_URL: https://git.simonmalm.com
+        ROOT_URL: https://gitea.simonmalm.com
 
   ## @section Memcached
   #
