@@ -14,6 +14,10 @@ harbor:
     persistentVolumeClaim:
       registry:
         storageClass: ceph-filesystem
+        accessMode: ReadWriteMany
       jobservice:
         storageClass: ceph-filesystem
-
+        accessMode: ReadWriteMany
+      chartmuseum:
+        storageClass: ceph-filesystem
+        accessMode: ReadWriteMany
