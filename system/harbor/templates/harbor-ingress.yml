@@ -12,7 +12,7 @@ spec:
       priority: 1
       services:
         - kind: Service
-          name: harbor-harbor-portal
+          name: harbor-portal
           namespace: harbor
           port: 80
     - kind: Rule
@@ -20,7 +20,7 @@ spec:
       priority: 1
       services:
         - kind: Service
-          name: harbor-harbor-portal
+          name: harbor-portal
           namespace: harbor
           port: 80
     - kind: Rule
@@ -28,7 +28,7 @@ spec:
       priority: 10
       services:
         - kind: Service
-          name: harbor-harbor-core
+          name: harbor-core
           namespace: harbor
           port: 80
     - kind: Rule
@@ -36,7 +36,7 @@ spec:
       priority: 10
       services:
         - kind: Service
-          name: harbor-harbor-core
+          name: harbor-core
           namespace: harbor
           port: 80
     - kind: Rule
@@ -44,7 +44,7 @@ spec:
       priority: 10
       services:
         - kind: Service
-          name: harbor-harbor-core
+          name: harbor-core
           namespace: harbor
           port: 80
     - kind: Rule
@@ -52,7 +52,7 @@ spec:
       priority: 10
       services:
         - kind: Service
-          name: harbor-harbor-core
+          name: harbor-core
           namespace: harbor
           port: 80
     - kind: Rule
@@ -60,7 +60,7 @@ spec:
       priority: 10
       services:
         - kind: Service
-          name: harbor-harbor-core
+          name: harbor-core
           namespace: harbor
           port: 80
     - kind: Rule
@@ -68,7 +68,7 @@ spec:
       priority: 1
       services:
         - kind: Service
-          name: harbor-harbor-portal
+          name: harbor-portal
           namespace: harbor
           port: 80
     - kind: Rule
@@ -76,7 +76,7 @@ spec:
       priority: 1
       services:
         - kind: Service
-          name: harbor-harbor-portal
+          name: harbor-portal
           namespace: harbor
           port: 80
     - kind: Rule
@@ -84,7 +84,7 @@ spec:
       priority: 10
       services:
         - kind: Service
-          name: harbor-harbor-core
+          name: harbor-core
           namespace: harbor
           port: 80
     - kind: Rule
@@ -92,7 +92,7 @@ spec:
       priority: 10
       services:
         - kind: Service
-          name: harbor-harbor-core
+          name: harbor-core
           namespace: harbor
           port: 80
     - kind: Rule
@@ -100,7 +100,7 @@ spec:
       priority: 10
       services:
         - kind: Service
-          name: harbor-harbor-core
+          name: harbor-core
           namespace: harbor
           port: 80
     - kind: Rule
@@ -108,7 +108,7 @@ spec:
       priority: 10
       services:
         - kind: Service
-          name: harbor-harbor-core
+          name: harbor-core
           namespace: harbor
           port: 80
     - kind: Rule
@@ -116,7 +116,7 @@ spec:
       priority: 10
       services:
         - kind: Service
-          name: harbor-harbor-core
+          name: harbor-core
           namespace: harbor
           port: 80
 
