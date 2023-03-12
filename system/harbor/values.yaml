@@ -16,7 +16,7 @@ harbor:
         storageClass: ceph-filesystem
         accessMode: ReadWriteMany
       jobservice:
-        joblog:
+        jobLog:
           storageClass: ceph-filesystem
           accessMode: ReadWriteMany
       chartmuseum:
