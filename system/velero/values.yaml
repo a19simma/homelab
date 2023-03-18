@@ -223,7 +223,7 @@ cleanUpCRDs: false
 ##
 configuration:
   # Cloud provider being used (e.g. aws, azure, gcp).
-  provider: aws
+  provider: "aws"
 
   # Parameters for the `default` BackupStorageLocation. See
   # https://velero.io/docs/v1.6/api-types/backupstoragelocation/
