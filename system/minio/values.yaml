@@ -232,9 +232,10 @@
     ## Ref: https://kubernetes.io/docs/user-guide/node-selection/
     ##
     nodeSelector: 
-      - key: "minio"
-        operator: "Equal"
-        value: "true"
+      - key: minio
+        operator: Equal
+        value: 
+        - "true"
     tolerations: 
       - key: "StorageOnly"
         operator: "Equal"
