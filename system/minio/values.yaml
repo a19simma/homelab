@@ -320,7 +320,7 @@
     ## Additional Annotations for the Kubernetes Job makePolicyJob
     makePolicyJob:
       securityContext:
-        enabled: true
+        enabled: false
         runAsUser: 1000
         runAsGroup: 1000
       resources:
@@ -349,7 +349,7 @@
     ## Additional Annotations for the Kubernetes Job makeUserJob
     makeUserJob:
       securityContext:
-        enabled: true
+        enabled: false
         runAsUser: 1000
         runAsGroup: 1000
       resources:
