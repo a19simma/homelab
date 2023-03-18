@@ -27,12 +27,6 @@ velero:
   # Init containers to add to the Velero deployment's pod spec. At least one plugin provider image is required.
   # If the value is a string then it is evaluated as a template.
   initContainers:
-    - name: velero-plugin-for-csi
-      image: velero/velero-plugin-for-csi:v0.4.2
-      imagePullPolicy: IfNotPresent
-      volumeMounts:
-        - mountPath: /target
-          name: plugins
     - name: velero-plugin-for-aws
       image: velero/velero-plugin-for-aws:v1.6.1
       imagePullPolicy: IfNotPresent
@@ -305,7 +299,7 @@ velero:
     terminatingResourceTimeout:
     # Comma separated list of velero feature flags. default: empty
     # features: EnableCSI
-    features: EnableCSI
+    features: 
     # `velero server` default: velero
     namespace:
 
@@ -313,7 +307,7 @@ velero:
     extraEnvVars: {}
 
     # Set true for backup all pod volumes without having to apply annotation on the pod when used file system backup Default: false.
-    defaultVolumesToFsBackup: "true"
+    defaultVolumesToFsBackup:
 
     # How often repository maintain is run for repositories by default.
     defaultRepoMaintainFrequency:
@@ -386,7 +380,7 @@ velero:
 
   nodeAgent:
     podVolumePath: /var/lib/kubelet/pods
-    privileged: false
+    privileged: "true"
     # Pod priority class name to use for the node-agent daemonset. Optional.
     priorityClassName: ""
     # Resource requests/limits to specify for the node-agent daemonset deployment. Optional.
