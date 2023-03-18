@@ -15,6 +15,7 @@ spec:
       name: "{{path.basename}}"
     spec:
       project: "services"
+      revisionHistoryLimit: 2
       source:
         repoURL: https://github.com/a19simma/argocd-cluster-bootstrap.git
         targetRevision: HEAD
