@@ -26,3 +26,6 @@ dependencies:
   - name: operator
     version: "4.5.8"
     repository: https://operator.min.io/
+  - name: tenant
+    version: "4.5.8"
+    repository: https://operator.min.io/
