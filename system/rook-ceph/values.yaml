@@ -1152,7 +1152,7 @@ rook-ceph-cluster:
   # -- Settings for the filesystem snapshot class
   # @default -- See [CephFS Snapshots](../Storage-Configuration/Ceph-CSI/ceph-csi-snapshot.md#cephfs-snapshots)
   cephFileSystemVolumeSnapshotClass:
-    enabled: false
+    enabled: true
     name: ceph-filesystem
     isDefault: true
     deletionPolicy: Delete
@@ -1164,7 +1164,7 @@ rook-ceph-cluster:
   # -- Settings for the block pool snapshot class
   # @default -- See [RBD Snapshots](../Storage-Configuration/Ceph-CSI/ceph-csi-snapshot.md#rbd-snapshots)
   cephBlockPoolsVolumeSnapshotClass:
-    enabled: false
+    enabled: true
     name: ceph-block
     isDefault: false
     deletionPolicy: Delete
@@ -1203,7 +1203,7 @@ rook-ceph-cluster:
           instances: 1
           priorityClassName: system-cluster-critical
       storageClass:
-        enabled: true
+        enabled: false
         name: ceph-bucket
         reclaimPolicy: Delete
         # see https://github.com/rook/rook/blob/master/Documentation/ceph-object-bucket-claim.md#storageclass for available configuration
