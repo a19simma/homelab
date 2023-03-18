@@ -381,7 +381,7 @@ velero:
   snapshotsEnabled: true
 
   # Whether to deploy the node-agent daemonset.
-  deployNodeAgent: false
+  deployNodeAgent: true
 
   nodeAgent:
     podVolumePath: /var/lib/kubelet/pods
@@ -392,10 +392,10 @@ velero:
     # https://velero.io/docs/v1.6/customize-installation/#customize-resource-requests-and-limits
     resources:
       requests:
-        cpu: 500m
+        cpu: 250m
         memory: 512Mi
       limits:
-        cpu: 1000m
+        cpu: 500m
         memory: 1024Mi
 
     # Tolerations to use for the node-agent daemonset. Optional.
