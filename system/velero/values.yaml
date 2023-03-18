@@ -1,4 +1,15 @@
 velero:
+  image:
+    repository: velero/velero
+    tag: release-1.10-dev
+    # Digest value example: sha256:d238835e151cec91c6a811fe3a89a66d3231d9f64d09e5f3c49552672d271f38.
+    # If used, it will take precedence over the image.tag.
+    # digest:
+    pullPolicy: IfNotPresent
+    # One or more secrets to be used when pulling images
+    imagePullSecrets: []
+    # - registrySecretName
+
   # Resource requests/limits to specify for the Velero deployment.
   # https://velero.io/docs/v1.6/customize-installation/#customize-resource-requests-and-limits
   resources:
