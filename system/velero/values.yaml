@@ -205,12 +205,12 @@ velero:
     backupStorageLocation:
       # name is the name of the backup storage location where backups should be stored. If a name is not provided,
       # a backup storage location will be created with the name "default". Optional.
-      name:
+      name: homelab
       # provider is the name for the backup storage location provider. If omitted
       # `configuration.provider` will be used instead.
-      provider: 
+      provider: aws
       # bucket is the name of the bucket to store backups in. Required.
-      bucket: "velero"
+      bucket: velero
       # caCert defines a base64 encoded CA bundle to use when verifying TLS connections to the provider. Optional.
       caCert:
       # prefix is the directory under which all Velero data should be stored within the bucket. Optional.
@@ -223,7 +223,7 @@ velero:
       # Additional provider-specific configuration. See link above
       # for details of required/optional fields for your provider.
       config:
-        region: "minio"
+        region: minio
         s3Url: http://192.168.1.4:9000
       #  kmsKeyId:
       #  resourceGroup:
@@ -248,7 +248,7 @@ velero:
       # Additional provider-specific configuration. See link above
       # for details of required/optional fields for your provider.
       config: 
-        region: "minio"
+        region: minio
     #    apiTimeout:
     #    resourceGroup:
     #    The ID of the subscription where volume snapshots should be stored, if different from the cluster’s subscription. If specified, also requires `configuration.volumeSnapshotLocation.config.resourceGroup`to be set. (Azure only)
