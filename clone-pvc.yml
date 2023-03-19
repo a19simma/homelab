@@ -4,12 +4,12 @@ metadata:
   name: cephfs-pvc-clone
   namespace: harbor
 spec:
-  storageClassName: ceph-block
+  storageClassName: ceph-filesystem
   dataSource:
     name: harbor-chartmuseum
     kind: PersistentVolumeClaim
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
   resources:
     requests:
       storage: 5Gi
