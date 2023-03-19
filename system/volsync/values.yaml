@@ -58,7 +58,7 @@ volsync:
     #   type: RuntimeDefault
 
   securityContext:
-    allowPrivilegeEscalation: false
+    allowPrivilegeEscalation: true
     capabilities:
       drop:
       - ALL
