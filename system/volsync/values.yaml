@@ -1,4 +1,4 @@
- volsync:
+volsync:
   # Default values for volsync.
   replicaCount: 1
 
