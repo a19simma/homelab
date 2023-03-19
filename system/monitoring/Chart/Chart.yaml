@@ -23,7 +23,7 @@ version: 0.1.0
 # It is recommended to use it with quotes.
 appVersion: "0.1.0"
 
-dependencies:
+#dependencies:
   - name: kube-prometheus-stack
     version: "43.2.1"
     repository: https://prometheus-community.github.io/helm-charts
