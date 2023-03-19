@@ -28,3 +28,4 @@ spec:
     #storageClassName: my-sc-name
     # The VSC to use if the copy method is Snapshot (default if omitted)
     volumeSnapshotClassName: ceph-filesystem
+    cacheStorageClassName: ceph-filesystem
