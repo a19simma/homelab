@@ -1154,7 +1154,7 @@ rook-ceph-cluster:
   cephFileSystemVolumeSnapshotClass:
     enabled: true
     name: ceph-filesystem
-    isDefault: true
+    isDefault: false
     deletionPolicy: Delete
     annotations: {}
     labels: 
@@ -1167,7 +1167,7 @@ rook-ceph-cluster:
   cephBlockPoolsVolumeSnapshotClass:
     enabled: true
     name: ceph-block
-    isDefault: false
+    isDefault: true
     deletionPolicy: Delete
     annotations: {}
     labels: 
