@@ -1,4 +1,8 @@
 harbor:
+  expose:
+    type: clusterIP
+    tls: 
+      enabled: false
   externalURL: https://harbor.simonmalm.com
   internalTLS:
     # If internal TLS enabled
