@@ -20,4 +20,4 @@ spec:
     - group: '*'
       kind: '*'
   sourceRepos:
-    - https://github.com/a19simma/argocd-cluster-bootstrap
+    - https://github.com/a19simma/homelab

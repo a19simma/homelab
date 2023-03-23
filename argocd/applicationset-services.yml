@@ -6,7 +6,7 @@ metadata:
 spec:
   generators:
     - git:
-        repoURL: https://github.com/a19simma/argocd-cluster-bootstrap.git
+        repoURL: https://github.com/a19simma/homelab.git
         revision: HEAD
         directories:
           - path: services/*
@@ -17,7 +17,7 @@ spec:
       project: "services"
       revisionHistoryLimit: 2
       source:
-        repoURL: https://github.com/a19simma/argocd-cluster-bootstrap.git
+        repoURL: https://github.com/a19simma/homelab.git
         targetRevision: HEAD
         path: "{{path}}"
       destination:
