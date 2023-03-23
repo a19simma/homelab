@@ -70,15 +70,15 @@ nextcloud:
     enabled: true
 
   livenessProbe:
-    enabled: disable
-    initialDelaySeconds: 240
+    enabled: enable
+    initialDelaySeconds: 180
     periodSeconds: 30
     timeoutSeconds: 10
     failureThreshold: 10
     successThreshold: 1
   readinessProbe:
-    enabled: disable
-    initialDelaySeconds: 240
+    enabled: enable
+    initialDelaySeconds: 180
     periodSeconds: 30
     timeoutSeconds: 10
     failureThreshold: 10
