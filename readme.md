@@ -6,6 +6,8 @@
 
 ![Rook-Ceph](https://argo.simonmalm.com/api/badge?name=rook-ceph) Rook-Ceph
 
+![Vault](https://argo.simonmalm.com/api/badge?name=vault) HashiCorp Vault
+
 ![Volsync](https://argo.simonmalm.com/api/badge?name=volsync) Volsync
 
 ![Nextcloud](https://argo.simonmalm.com/api/badge?name=nextcloud) Nextcloud
