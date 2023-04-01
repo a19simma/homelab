@@ -1,26 +1,26 @@
-![Grafana](https://argo.simonmalm.com/api/badge?name=monitoring) Grafana
+![Grafana](https://argo.simonmalm.com/api/badge?name=monitoring&revision=true) Grafana
 
-![Cert-Manager](https://argo.simonmalm.com/api/badge?name=cert-manager) Cert-Manager
+![Cert-Manager](https://argo.simonmalm.com/api/badge?name=cert-manager&revision=true) Cert-Manager
 
-![Traefik](https://argo.simonmalm.com/api/badge?name=traefik) Traefik
+![Traefik](https://argo.simonmalm.com/api/badge?name=traefik&revision=true) Traefik
 
-![Rook-Ceph](https://argo.simonmalm.com/api/badge?name=rook-ceph) Rook-Ceph
+![Rook-Ceph](https://argo.simonmalm.com/api/badge?name=rook-ceph&revision=true) Rook-Ceph
 
-![Vault](https://argo.simonmalm.com/api/badge?name=vault) HashiCorp Vault
+![Vault](https://argo.simonmalm.com/api/badge?name=vault&revision=true) HashiCorp Vault
 
-![Volsync](https://argo.simonmalm.com/api/badge?name=volsync) Volsync
+![Volsync](https://argo.simonmalm.com/api/badge?name=volsync&revision=true) Volsync
 
-![Nextcloud](https://argo.simonmalm.com/api/badge?name=nextcloud) Nextcloud
+![Nextcloud](https://argo.simonmalm.com/api/badge?name=nextcloud&revision=true) Nextcloud
 
-![Jellyfin](https://argo.simonmalm.com/api/badge?name=media-library) Jellyfin
+![Jellyfin](https://argo.simonmalm.com/api/badge?name=media-library&revision=true) Jellyfin
 
-![Metallb](https://argo.simonmalm.com/api/badge?name=metallb) Metallb
+![Metallb](https://argo.simonmalm.com/api/badge?name=metallb&revision=true) Metallb
 
-![Harbor](https://argo.simonmalm.com/api/badge?name=harbor) Harbor
+![Harbor](https://argo.simonmalm.com/api/badge?name=harbor&revision=true) Harbor
 
-![Drone](https://argo.simonmalm.com/api/badge?name=drone) Drone
+![Drone](https://argo.simonmalm.com/api/badge?name=drone&revision=true) Drone
 
-![Gitea](https://argo.simonmalm.com/api/badge?name=gitea) Gitea
+![Gitea](https://argo.simonmalm.com/api/badge?name=gitea&revision=true) Gitea
 
 
 # Cluster configuration using Argo-CD
