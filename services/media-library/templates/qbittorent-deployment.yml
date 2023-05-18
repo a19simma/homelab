@@ -15,7 +15,7 @@ spec:
       containers:
         - name: qbittorrent-server
           image: "{{ .Values.qbittorrent.image.repository }}:{{ .Values.qbittorrent.image.tag }}"
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
           env:
             - name: WEBUI_PORT
               value: "8080"
