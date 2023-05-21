@@ -18,8 +18,6 @@
 
 ![Drone](https://argo.simonmalm.com/api/badge?name=drone&revision=true) Drone
 
-![Gitea](https://argo.simonmalm.com/api/badge?name=gitea&revision=true) Gitea
-
 
 # Cluster configuration using Argo-CD
 
