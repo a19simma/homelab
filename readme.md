@@ -4,8 +4,6 @@
 
 ![Traefik](https://argo.simonmalm.com/api/badge?name=traefik&revision=true) Traefik
 
-![Rook-Ceph](https://argo.simonmalm.com/api/badge?name=rook-ceph&revision=true) Rook-Ceph
-
 ![Vault](https://argo.simonmalm.com/api/badge?name=vault&revision=true) HashiCorp Vault
 
 ![Volsync](https://argo.simonmalm.com/api/badge?name=volsync&revision=true) Volsync
