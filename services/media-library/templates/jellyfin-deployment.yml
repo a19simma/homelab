@@ -14,7 +14,7 @@ spec:
     spec:
       initContainers:
       - name: set-listeners
-        image: debian/stable-slim
+        image: debian:bookworm-slim
         command: ["echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.d/40-max-user-watches.conf && sudo sysctl -p"]
       containers:
         - name: jellyfin-server
