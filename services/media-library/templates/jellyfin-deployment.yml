@@ -12,10 +12,6 @@ spec:
       labels:
         {{- include "media-library.selectorLabels" . | nindent 8 }}
     spec:
-      initContainers:
-      - name: set-listeners
-        image: debian:bookworm-slim
-        command: ["sh", "-c", "echo fs.inotify.max_user_watches=524288 | tee -a /etc/sysctl.conf && sysctl -p"]
       containers:
         - name: jellyfin-server
           image: "{{ .Values.jellyfin.image.repository }}:{{ .Values.jellyfin.image.tag }}"
