@@ -58,7 +58,8 @@ nextcloud:
   persistence:
     # Nextcloud Data (/var/www/html)
     enabled: true
-    storageClass: 
+    storageClass: "-"
+    existingClaim: nextcloud-config
     size: 8Gi
     nextcloudData:
       enabled: true
