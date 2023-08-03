@@ -5,7 +5,7 @@ metadata:
 spec:
   storageClassName: manual
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
   resources:
     requests:
       storage: 8Gi
@@ -21,7 +21,7 @@ spec:
     storage: 8Gi
   persistentVolumeReclaimPolicy: Retain
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
   nfs:
     server: 192.168.1.4
     path: "/mnt/default/nextcloud-config"
