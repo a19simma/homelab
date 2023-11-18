@@ -1,23 +1,16 @@
-apiVersion: traefik.containo.us/v1alpha1
-kind: IngressRoute
+apiVersion: networking.k8s.io/v1
+kind: Ingress
 metadata:
   name: jellyfin-ingress
-  annotations:
-    kubernetes.io/ingress.class: traefik-external
 spec:
-  entryPoints:
-    - web
-    - websecure
-  routes:
-    - match: Host(`jellyfin.simonmalm.com`)
-      kind: Rule
-      services:
-        - name: jellyfin-service
-          port: 8096
-    - match: Host(`jellyfin.local.simonmalm.com`)
-      kind: Rule
-      services:
-        - name: jellyfin-service
+  rules:
+  - host: "jellyfin.simonmalm.com"
+    https:
+      path: "/"
+      backend:
+        service:
+          name: jellyfin-service
           port: 8096
   tls:
+  - host: "jellyfin.simonmalm.com"
     secretName: jellyfin-simonmalm-com
