@@ -1,0 +1,24 @@
+version: v1
+nodes:
+    - name: k8s-laptop-worker1
+      drives:
+        - id: 8:5$b8FqB9Clo37h/c3kkB07vCGIxI5JZ0icR7ZsTRVjd7w=
+          name: sda5
+          size: 1022361600
+          make: QEMU QEMU_HARDDISK
+          fs: swap
+          select: "no"
+    - name: k8s-burken-worker1
+      drives:
+        - id: 8:16$c55M7+SHpQFtDyzOAO00cPUCAQjNIgo3Omk0OR5gAbw=
+          name: sdb
+          size: 1000204886016
+          make: QEMU QEMU_HARDDISK
+          fs: xfs
+          select: "yes"
+        - id: 8:32$kN9u2nBNKgKe9+L+1+QRF97Nos/HD2TQ3e0JrX6P5Iw=
+          name: sdc
+          size: 1000204886016
+          make: QEMU QEMU_HARDDISK
+          fs: xfs
+          select: "yes"
