@@ -1,124 +1,57 @@
-apiVersion: traefik.containo.us/v1alpha1
-kind: IngressRoute
+apiVersion: networking.k8s.io/v1
+kind: Ingress
 metadata:
   name: harbor
-  namespace: harbor
-  annotations:
-    kubernetes.io/ingress.class: traefik-external
+  namespace: 
 spec:
-  routes:
-    - kind: Rule
-      match: Host(`harbor.local.simonmalm.com`)
-      priority: 1
-      services:
-        - kind: Service
-          name: harbor-portal
-          namespace: harbor
-          port: 80
-    - kind: Rule
-      match: Host(`harbor.local.simonmalm.com`) && PathPrefix(`/`)
-      priority: 1
-      services:
-        - kind: Service
-          name: harbor-portal
-          namespace: harbor
-          port: 80
-    - kind: Rule
-      match: Host(`harbor.local.simonmalm.com`) && PathPrefix(`/c/`)
-      priority: 10
-      services:
-        - kind: Service
-          name: harbor-core
-          namespace: harbor
-          port: 80
-    - kind: Rule
-      match: Host(`harbor.local.simonmalm.com`) && PathPrefix(`/api/`)
-      priority: 10
-      services:
-        - kind: Service
-          name: harbor-core
-          namespace: harbor
-          port: 80
-    - kind: Rule
-      match: Host(`harbor.local.simonmalm.com`) && PathPrefix(`/service/`)
-      priority: 10
-      services:
-        - kind: Service
-          name: harbor-core
-          namespace: harbor
-          port: 80
-    - kind: Rule
-      match: Host(`harbor.local.simonmalm.com`) && PathPrefix(`/v2/`)
-      priority: 10
-      services:
-        - kind: Service
-          name: harbor-core
-          namespace: harbor
-          port: 80
-    - kind: Rule
-      match: Host(`harbor.local.simonmalm.com`) && PathPrefix(`/chartrepo/`)
-      priority: 10
-      services:
-        - kind: Service
-          name: harbor-core
-          namespace: harbor
-          port: 80
-    - kind: Rule
-      match: Host(`harbor.simonmalm.com`)
-      priority: 1
-      services:
-        - kind: Service
-          name: harbor-portal
-          namespace: harbor
-          port: 80
-    - kind: Rule
-      match: Host(`harbor.simonmalm.com`) && PathPrefix(`/`)
-      priority: 1
-      services:
-        - kind: Service
-          name: harbor-portal
-          namespace: harbor
-          port: 80
-    - kind: Rule
-      match: Host(`harbor.simonmalm.com`) && PathPrefix(`/c/`)
-      priority: 10
-      services:
-        - kind: Service
-          name: harbor-core
-          namespace: harbor
-          port: 80
-    - kind: Rule
-      match: Host(`harbor.simonmalm.com`) && PathPrefix(`/api/`)
-      priority: 10
-      services:
-        - kind: Service
-          name: harbor-core
-          namespace: harbor
-          port: 80
-    - kind: Rule
-      match: Host(`harbor.simonmalm.com`) && PathPrefix(`/service/`)
-      priority: 10
-      services:
-        - kind: Service
-          name: harbor-core
-          namespace: harbor
-          port: 80
-    - kind: Rule
-      match: Host(`harbor.simonmalm.com`) && PathPrefix(`/v2/`)
-      priority: 10
-      services:
-        - kind: Service
-          name: harbor-core
-          namespace: harbor
-          port: 80
-    - kind: Rule
-      match: Host(`harbor.simonmalm.com`) && PathPrefix(`/chartrepo/`)
-      priority: 10
-      services:
-        - kind: Service
-          name: harbor-core
-          namespace: harbor
-          port: 80
-
   tls:
+  - hosts:
+      - harbor.simonmalm.com
     secretName: harbor-simonmalm-com
+  rules:
+  - host: harbor.simonmalm.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: harbor-portal
+            port:
+              number: 80
+      - path: /c/
+        pathType: Prefix
+        backend:
+          service:
+            name: harbor-core
+            port:
+              number: 80
+      - path: /api/
+        pathType: Prefix
+        backend:
+          service:
+            name: harbor-core
+            port:
+              number: 80
+      - path: /service/
+        pathType: Prefix
+        backend:
+          service:
+            name: harbor-core
+            port:
+              number: 80
+      - path: /v2/
+        pathType: Prefix
+        backend:
+          service:
+            name: harbor-core
+            port:
+              number: 80
+      - path: /chartrepo/
+        pathType: Prefix
+        backend:
+          service:
+            name: harbor-core
+            port:
+              number: 80
+

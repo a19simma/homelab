@@ -1,24 +1,20 @@
-apiVersion: traefik.containo.us/v1alpha1
-kind: IngressRoute
+apiVersion: networking.k8s.io/v1
+kind: Ingress
 metadata:
-  name: nextcloud
-  annotations:
-    kubernetes.io/ingress.class: traefik-external
+  name: nextcloud-ingress
 spec:
-  entryPoints:
-    - websecure
-  routes:
-    - match: Host(`nextcloud.simonmalm.com`)
-      kind: Rule
-      services:
-        - name: nextcloud
-          port: 8080
-    - match: Host(`nextcloud.local.simonmalm.com`)
-      kind: Rule
-      services:
-        - name: nextcloud
-          port: 8080
- 
   tls:
+  - hosts:
+      - nextcloud.simonmalm.com
     secretName: nextcloud-simonmalm-com
-
+  rules:
+  - host: nextcloud.simonmalm.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: nextcloud
+            port:
+              number: 8080

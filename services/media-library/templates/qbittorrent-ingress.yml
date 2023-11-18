@@ -1,23 +1,20 @@
-apiVersion: traefik.containo.us/v1alpha1
-kind: IngressRoute
+apiVersion: networking.k8s.io/v1
+kind: Ingress
 metadata:
   name: qbittorrent-ingress
-  annotations:
-    kubernetes.io/ingress.class: traefik-external
 spec:
-  entryPoints:
-    - websecure
-  routes:
-    - match: Host(`qbit.simonmalm.com`)
-      kind: Rule
-      services:
-        - name: qbittorrent-service
-          port: 8080
-    - match: Host(`qbit.local.simonmalm.com`)
-      kind: Rule
-      services:
-        - name: qbittorrent-service
-          port: 8080
-
   tls:
+  - hosts:
+      - qbit.simonmalm.com
     secretName: simonmalm-com-tls
+  rules:
+  - host: qbit.simonmalm.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: qbittorrent-service
+            port:
+              number: 8080
