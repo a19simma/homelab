@@ -12,5 +12,6 @@ spec:
           name: jellyfin-service
           port: 8096
   tls:
-  - host: "jellyfin.simonmalm.com"
+  - hosts: 
+    - "jellyfin.simonmalm.com"
     secretName: jellyfin-simonmalm-com
