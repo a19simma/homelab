@@ -5,7 +5,7 @@ metadata:
 spec:
   rules:
   - host: "jellyfin.simonmalm.com"
-    https:
+    http:
       path: "/"
       pathType: Prefix
       backend:
