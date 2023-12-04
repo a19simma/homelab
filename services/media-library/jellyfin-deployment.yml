@@ -1,0 +1,85 @@
+apiVersion: apps/v1
+metadata:
+  name: {{ include "media-library.fullname" .}}
+spec:
+  replicas: {{ .Values.jellyfin.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "media-library.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "media-library.selectorLabels" . | nindent 8 }}
+    spec:
+      containers:
+        - name: jellyfin-server
+          image: jellyfin/jellyfin:latest
+          imagePullPolicy: IfNotPresent
+          env: 
+            - name: JELLYFIN_PublishedServerUrl
+              value: https://jellyfin.simonmalm.com
+          ports:
+            - name: http
+              containerPort: 8096
+              protocol: TCP
+            - name: https
+              containerPort: 8920
+              protocol: TCP
+            - name: sdiscovery
+              containerPort: 1900
+              protocol: UDP
+            - name: cdiscovery
+              containerPort: 7359
+              protocol: TCP
+
+          volumeMounts:
+            - name: config
+              mountPath: "/config"
+            - name: cache
+              mountPath: "/cache"
+            - name: movies
+              mountPath: "/movies"
+            - name: shows
+              mountPath: "/shows"
+            - name: anime
+              mountPath: "/anime"
+            - name: software
+              mountPath: "/software"
+            - name: music
+              mountPath: "/music"
+            - name: audiobooks
+              mountPath: "/audiobooks"
+            - name: books
+              mountPath: "/books"
+      volumes:
+        - name: config
+          persistentVolumeClaim:
+            claimName: config-pvc
+        - name: cache
+          persistentVolumeClaim:
+            claimName: cache-pvc
+        - name: movies
+          persistentVolumeClaim:
+            claimName: movies-pvc
+        - name: shows
+          persistentVolumeClaim:
+            claimName: shows-pvc
+        - name: software
+          persistentVolumeClaim:
+            claimName: software-pvc
+        - name: anime
+          persistentVolumeClaim:
+            claimName: anime-pvc
+        - name: music
+          persistentVolumeClaim:
+            claimName: music-pvc
+        - name: audiobooks
+          nfs:
+            server: "192.168.1.4"
+            path: "/mnt/default/audiobooks"
+            readOnly: false
+        - name: books
+          nfs:
+            server: "192.168.1.4"
+            path: "/mnt/default/books"
+            readOnly: false
