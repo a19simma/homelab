@@ -6,7 +6,7 @@ spec:
   template:
     metadata:
       labels:
-        {{- include "media-library.selectorLabels" . | nindent 8 }}
+        app: jellyfin
     spec:
       containers:
         - name: jellyfin-server

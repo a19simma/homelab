@@ -3,8 +3,14 @@ kind: Deployment
 metadata:
   name: media-library
 spec:
-  replicas: {{ .Values.jellyfin.replicaCount }}
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jellyfin
   template:
+    metadata:
+      labels:
+        app: jellyfin
     spec:
       containers:
         - name: jellyfin-server
