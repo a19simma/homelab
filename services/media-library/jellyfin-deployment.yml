@@ -3,9 +3,6 @@ metadata:
   name: {{ include "media-library.fullname" .}}
 spec:
   replicas: {{ .Values.jellyfin.replicaCount }}
-  selector:
-    matchLabels:
-      {{- include "media-library.selectorLabels" . | nindent 6 }}
   template:
     metadata:
       labels:
