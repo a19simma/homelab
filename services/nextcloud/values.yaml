@@ -33,26 +33,26 @@ nextcloud:
            ]
       );
     extraVolumes:
-    #  - name: nfs
-    #    nfs:
-    #      server: "10.0.0.1"
-    #      path: "/nextcloud_data"
-    #      readOnly: false
-    - name: torrents
-      nfs:
-        server: "192.168.1.4"
-        path: "/mnt/default/torrents"
-        readOnly: false
-    - name: books
-      nfs:
-        server: "192.168.1.4"
-        path: "/mnt/default/books"
-        readOnly: false
+      #  - name: nfs
+      #    nfs:
+      #      server: "10.0.0.1"
+      #      path: "/nextcloud_data"
+      #      readOnly: false
+      - name: torrents
+        nfs:
+          server: "192.168.1.4"
+          path: "/mnt/default/torrents"
+          readOnly: false
+      - name: books
+        nfs:
+          server: "192.168.1.4"
+          path: "/mnt/default/books"
+          readOnly: false
     extraVolumeMounts:
-    - name: torrents
-      mountPath: "/nfs/torrents"
-    - name: books
-      mountPath: "/nfs/books"
+      - name: torrents
+        mountPath: "/nfs/torrents"
+      - name: books
+        mountPath: "/nfs/books"
     #  - name: nfs
     #    mountPath: "/legacy_data"
   persistence:

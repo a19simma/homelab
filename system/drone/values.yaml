@@ -1,5 +1,5 @@
 drone:
-    # -- Mapping between IP and hostnames that will be injected as entries in the pod's hosts files
+  # -- Mapping between IP and hostnames that will be injected as entries in the pod's hosts files
   # https://kubernetes.io/docs/tasks/network/customize-hosts-file-for-pods/
   hostAliases:
     []

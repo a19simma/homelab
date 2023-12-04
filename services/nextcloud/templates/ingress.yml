@@ -4,17 +4,17 @@ metadata:
   name: nextcloud-ingress
 spec:
   tls:
-  - hosts:
-      - nextcloud.simonmalm.com
-    secretName: nextcloud-simonmalm-com
+    - hosts:
+        - nextcloud.simonmalm.com
+      secretName: nextcloud-simonmalm-com
   rules:
-  - host: nextcloud.simonmalm.com
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: nextcloud
-            port:
-              number: 8080
+    - host: nextcloud.simonmalm.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: nextcloud
+                port:
+                  number: 8080

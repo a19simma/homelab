@@ -6,17 +6,17 @@ metadata:
   namespace: monitoring
 spec:
   tls:
-  - hosts:
-      - grafana.simonmalm.com
-    secretName: simonmalm-com-tls
+    - hosts:
+        - grafana.simonmalm.com
+      secretName: simonmalm-com-tls
   rules:
-  - host: grafana.simonmalm.com
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: monitoring-grafana
-            port:
-              number: 80
+    - host: grafana.simonmalm.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: monitoring-grafana
+                port:
+                  number: 80

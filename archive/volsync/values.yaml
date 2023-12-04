@@ -61,7 +61,7 @@ volsync:
     allowPrivilegeEscalation: false
     capabilities:
       drop:
-      - ALL
+        - ALL
     readOnlyRootFilesystem: true
 
   resources:

@@ -31,14 +31,14 @@ rook-ceph:
       memory: 128Mi
 
   # -- Kubernetes [`nodeSelector`](https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#nodeselector) to add to the Deployment.
-  nodeSelector: 
+  nodeSelector:
     storage: rook
   # Constraint rook-ceph-operator Deployment to nodes with label `disktype: ssd`.
   # For more info, see https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#nodeselector
   #  disktype: ssd
 
   # -- List of Kubernetes [`tolerations`](https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/) to add to the Deployment.
-  tolerations: 
+  tolerations:
     - key: "StorageOnly"
       operator: "Exists"
       effect: "NoExecute"
@@ -636,7 +636,7 @@ rook-ceph-cluster:
     # -- Toolbox image, defaults to the image used by the Ceph cluster
     image: #quay.io/ceph/ceph:v17.2.3
     # -- Toolbox tolerations
-    tolerations: 
+    tolerations:
       - key: "StorageOnly"
         operator: "Exists"
         effect: "NoExecute"
@@ -778,7 +778,7 @@ rook-ceph-cluster:
     #   # enable host networking
     #   provider: host
     #   # EXPERIMENTAL: enable the Multus network provider
-        # provider: multus
+    # provider: multus
     #   selectors:
     #     # The selector keys are required to be `public` and `cluster`.
     #     # Based on the configuration, the operator will do the following:
@@ -841,17 +841,17 @@ rook-ceph-cluster:
           requiredDuringSchedulingIgnoredDuringExecution:
             nodeSelectorTerms:
               - matchExpressions:
-                - key: storage
-                  operator: In
-                  values:
-                  - rook
+                  - key: storage
+                    operator: In
+                    values:
+                      - rook
         podAffinity:
         podAntiAffinity:
         topologySpreadConstraints:
         tolerations:
-        - key: StorageOnly
-          operator: Exists
-          effect: NoExecute
+          - key: StorageOnly
+            operator: Exists
+            effect: NoExecute
     #   # The above placement information can also be specified for mon, osd, and mgr components
     #   mon:
     #   # Monitor deployments may contain an anti-affinity rule for avoiding monitor
@@ -1059,10 +1059,10 @@ rook-ceph-cluster:
         mountOptions: []
         # see https://kubernetes.io/docs/concepts/storage/storage-classes/#allowed-topologies
         allowedTopologies: []
-  #        - matchLabelExpressions:
-  #            - key: rook-ceph-role
-  #              values:
-  #                - storage-node
+        #        - matchLabelExpressions:
+        #            - key: rook-ceph-role
+        #              values:
+        #                - storage-node
         # see https://github.com/rook/rook/blob/master/Documentation/ceph-block.md#provision-storage for available configuration
         parameters:
           # (optional) mapOptions is a comma-separated list of map options.

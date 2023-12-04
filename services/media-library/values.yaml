@@ -6,9 +6,3 @@ jellyfin:
   image:
     repository: jellyfin/jellyfin
     tag: latest
-
-qbittorrent:
-  replicaCount: 1
-  image:
-    repository: hotio/qbittorrent
-    tag: latest

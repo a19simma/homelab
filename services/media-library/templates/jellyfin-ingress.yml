@@ -4,17 +4,17 @@ metadata:
   name: jellyfin-ingress
 spec:
   rules:
-  - host: "jellyfin.simonmalm.com"
-    http:
-      paths:
-        - path: "/"
-          pathType: Prefix
-          backend:
-            service:
-              name: jellyfin-service
-              port: 
-                number: 8096
+    - host: "jellyfin.simonmalm.com"
+      http:
+        paths:
+          - path: "/"
+            pathType: Prefix
+            backend:
+              service:
+                name: jellyfin-service
+                port:
+                  number: 8096
   tls:
-  - hosts: 
-    - "jellyfin.simonmalm.com"
-    secretName: jellyfin-simonmalm-com
+    - hosts:
+        - "jellyfin.simonmalm.com"
+      secretName: jellyfin-simonmalm-com
