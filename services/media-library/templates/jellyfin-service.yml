@@ -3,7 +3,6 @@ kind: Service
 metadata:
   name: jellyfin-service
 spec:
-  selector: { { - include "media-library.selectorLabels" . | nindent 4 } }
   ports:
     - protocol: TCP
       port: 8096

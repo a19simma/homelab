@@ -1,16 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
-metadata:
-  name: {{ include "media-library.fullname" .}}
 spec:
   replicas: {{ .Values.jellyfin.replicaCount }}
-  selector:
-    matchLabels:
-      {{- include "media-library.selectorLabels" . | nindent 6 }}
   template:
-    metadata:
-      labels:
-        {{- include "media-library.selectorLabels" . | nindent 8 }}
     spec:
       containers:
         - name: jellyfin-server
@@ -84,15 +76,3 @@ spec:
             server: "192.168.1.4"
             path: "/mnt/default/books"
             readOnly: false
-{{- with .Values.nodeSelector }}
-nodeSelector:
-{{- toYaml . | nindent 8 }}
-{{- end }}
-{{- with .Values.affinity }}
-affinity:
-{{- toYaml . | nindent 8 }}
-{{- end }}
-{{- with .Values.tolerations }}
-tolerations:
-{{- toYaml . | nindent 8 }}
-{{- end }}
