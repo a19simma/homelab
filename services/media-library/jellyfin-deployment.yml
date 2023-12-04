@@ -6,7 +6,7 @@ spec:
     spec:
       containers:
         - name: jellyfin-server
-          image: jellyfin/jellyfin:latest
+          image: "jellyfin/jellyfin:latest"
           imagePullPolicy: IfNotPresent
           env: 
             - name: JELLYFIN_PublishedServerUrl
