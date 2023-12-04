@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: movies-pvc
+spec:
+  storageClassName: manual
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 3Ti
+  volumeName: movies-pv
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: movies-pv
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 3Ti
+  persistentVolumeReclaimPolicy: Retain
+  accessModes:
+    - ReadWriteMany
+  nfs:
+    server: 192.168.1.4
+    path: "/mnt/default/movies"
+  mountOptions:
+    - nfsvers=4.2

@@ -1,0 +1,8 @@
+nameOverride: ""
+fullnameOverride: ""
+
+jellyfin:
+  replicaCount: 1
+  image:
+    repository: jellyfin/jellyfin
+    tag: latest
