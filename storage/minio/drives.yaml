@@ -1,24 +1,77 @@
 version: v1
 nodes:
-  - name: k8s-laptop-worker1
-    drives:
-      - id: 8:5$b8FqB9Clo37h/c3kkB07vCGIxI5JZ0icR7ZsTRVjd7w=
-        name: sda5
-        size: 1022361600
-        make: QEMU QEMU_HARDDISK
-        fs: swap
-        select: "no"
-  - name: k8s-burken-worker1
-    drives:
-      - id: 8:16$c55M7+SHpQFtDyzOAO00cPUCAQjNIgo3Omk0OR5gAbw=
-        name: sdb
-        size: 1000204886016
-        make: QEMU QEMU_HARDDISK
-        fs: xfs
-        select: "yes"
-      - id: 8:32$kN9u2nBNKgKe9+L+1+QRF97Nos/HD2TQ3e0JrX6P5Iw=
-        name: sdc
-        size: 1000204886016
-        make: QEMU QEMU_HARDDISK
-        fs: xfs
-        select: "yes"
+    - name: db-worker-0
+      drives:
+        - id: 8:5$xLos8qfz1oD39jlZKw6IGLhjbZKFKOcyyc1Oftqdh70=
+          name: sda5
+          size: 549453824
+          make: Samsung_SSD_850_PRO_512GB (Part 5)
+          fs: ntfs
+          select: "yes"
+        - id: 8:18$rL4LMGJ/BNgxT6uZKSF3EtWCFRe2XU2+sEGRxfSVfkQ=
+          name: sdb2
+          size: 500090011648
+          make: Samsung_SSD_860_EVO_500GB (Part 2)
+          fs: ntfs
+          select: "yes"
+        - id: 8:34$utZ/iCTn6XsmIH8l7IVqTJ0I9sgmRLl8coGvagslAis=
+          name: sdc2
+          size: 500090011648
+          make: Samsung_SSD_860_EVO_500GB (Part 2)
+          fs: ntfs
+          select: "yes"
+        - id: 259:5$s55T1/zrK4Rbm4+zaE+9pXlptcF2OU952OvaOhF8v7s=
+          name: nvme0n1p5
+          size: 12221153280
+          make: THNSN5512GPU7 NVMe TOSHIBA 512GB (Part 5)
+          fs: ntfs
+          select: "yes"
+        - id: 8:52$Sgx0dIgCq15zOHPFjvn0G6m6gesGbTDingOwk/N4VWc=
+          name: sdd4
+          size: 510962345472
+          make: Samsung_SSD_850_PRO_512GB (Part 4)
+          fs: ntfs
+          select: "yes"
+        - id: 259:3$al66iNElixWrxU2EPVyhzk+vu0Vm9U2+a7YbG01uA0Y=
+          name: nvme0n1p3
+          size: 498757271552
+          make: THNSN5512GPU7 NVMe TOSHIBA 512GB (Part 3)
+          fs: ntfs
+          select: "yes"
+        - id: 8:4$lyqle3I1bhTNw1f3myUFPKuRZet5v8VdMg+YHvTom6U=
+          name: sda4
+          size: 510964246016
+          make: Samsung_SSD_850_PRO_512GB (Part 4)
+          fs: ntfs
+          select: "yes"
+        - id: 8:53$xxFUy1eEDqMPDY9lUp2xaQYWtJNieYC1plGUBWwQiJw=
+          name: sdd5
+          size: 551550976
+          make: Samsung_SSD_850_PRO_512GB (Part 5)
+          fs: ntfs
+          select: "yes"
+    - name: db-worker-1
+      drives:
+        - id: 259:0$WqWm26/4mZ786vaV+Lcg93fQSt/138lVHGbKtwzQzIQ=
+          name: nvme0n1
+          size: 500107862016
+          make: CT500P3SSD8
+          select: "yes"
+        - id: 8:49$SxWK7+8BLRrYZbJblhW84ntXhdAGen8bLlm1/tLJAu8=
+          name: sdd1
+          size: 500104691712
+          make: Samsung_SSD_840_EVO_500GB (Part 1)
+          fs: ntfs
+          select: "yes"
+        - id: 8:17$5N8oC/NM8qDb0BwtPfnsdeI9bWBjwWaCswZKEhNHclU=
+          name: sdb1
+          size: 500105740288
+          make: Samsung_SSD_850_EVO_500GB (Part 1)
+          fs: ntfs
+          select: "yes"
+        - id: 8:2$M91I4djJki5vd1dVbaJH5bRkwKq9DCPwTtZUr4pzUHA=
+          name: sda2
+          size: 499738738688
+          make: Samsung_SSD_840_EVO_500GB (Part 2)
+          select: "yes"
+    - name: laptop-worker-0

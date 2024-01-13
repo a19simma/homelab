@@ -17,10 +17,11 @@ spec:
       project: "services"
       revisionHistoryLimit: 2
       source:
-        plugin: {}
         repoURL: https://github.com/a19simma/homelab.git
         targetRevision: HEAD
         path: "{{path}}"
+        helm:
+          releaseName: "{{path.basename}}"
       destination:
         server: https://kubernetes.default.svc
         namespace: "{{path.basename}}"
