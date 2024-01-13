@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: argocd
+  namespace: argocd
+spec:
+  tls:
+    - hosts:
+        - argo.simonmalm.com
+      secretName: simonmalm-com-tls
+  rules:
+    - host: argo.simonmalm.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: argocd-server
+                port:
+                  number: 443
