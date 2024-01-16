@@ -117,7 +117,7 @@ harbor:
       # be ignored
       database:
         existingClaim: ""
-        storageClass: "directpv-min-io"
+        storageClass: ""
         subPath: ""
         accessMode: ReadWriteOnce
         size: 1Gi
