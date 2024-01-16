@@ -301,7 +301,8 @@ harbor:
     #  requests:
     #    memory: 256Mi
     #    cpu: 100m
-    nodeSelector: {}
+    nodeSelector:
+      kubernetes.io/arch: amd64
     tolerations: []
     affinity: {}
     ## Additional deployment annotations
@@ -323,7 +324,8 @@ harbor:
     #  requests:
     #    memory: 256Mi
     #    cpu: 100m
-    nodeSelector: {}
+    nodeSelector: 
+      kubernetes.io/arch: amd64
     tolerations: []
     affinity: {}
     ## Additional deployment annotations
@@ -407,7 +409,8 @@ harbor:
     #   requests:
     #     memory: 256Mi
     #     cpu: 100m
-    nodeSelector: {}
+    nodeSelector: 
+      kubernetes.io/arch: amd64
     tolerations: []
     affinity: {}
     ## Additional deployment annotations
@@ -502,7 +505,8 @@ harbor:
     #  requests:
     #    memory: 256Mi
     #    cpu: 100m
-    nodeSelector: {}
+    nodeSelector: 
+      kubernetes.io/arch: amd64
     tolerations: []
     affinity: {}
     ## Additional deployment annotations
@@ -577,7 +581,8 @@ harbor:
       limits:
         cpu: 1
         memory: 1Gi
-    nodeSelector: {}
+    nodeSelector: 
+      kubernetes.io/arch: amd64
     tolerations: []
     affinity: {}
     ## Additional deployment annotations
@@ -600,7 +605,8 @@ harbor:
       #  requests:
       #    memory: 256Mi
       #    cpu: 100m
-      nodeSelector: {}
+      nodeSelector: 
+        kubernetes.io/arch: amd64
       tolerations: []
       affinity: {}
       ## Additional deployment annotations
@@ -622,7 +628,8 @@ harbor:
       #  requests:
       #    memory: 256Mi
       #    cpu: 100m
-      nodeSelector: {}
+      nodeSelector: 
+        kubernetes.io/arch: amd64
       tolerations: []
       affinity: {}
       ## Additional deployment annotations
@@ -665,7 +672,8 @@ harbor:
       # The timeout used in readinessProbe; 1 to 5 seconds
       readinessProbe:
         timeoutSeconds: 1
-      nodeSelector: {}
+      nodeSelector: 
+        kubernetes.io/arch: amd64
       tolerations: []
       affinity: {}
       ## The priority class to run the pod as
@@ -725,7 +733,8 @@ harbor:
       #  requests:
       #    memory: 256Mi
       #    cpu: 100m
-      nodeSelector: {}
+      nodeSelector: 
+        kubernetes.io/arch: amd64
       tolerations: []
       affinity: {}
       ## The priority class to run the pod as
@@ -764,7 +773,8 @@ harbor:
     image:
       repository: goharbor/harbor-exporter
       tag: v2.7.1
-    nodeSelector: {}
+    nodeSelector: 
+      kubernetes.io/arch: amd64
     tolerations: []
     affinity: {}
     cacheDuration: 23
